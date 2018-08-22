@@ -11,7 +11,7 @@ import UIKit
 class NetworkManager: NSObject {
     
     // MARK: - Method for preset collection view
-    let newgame = Game()
+  //  let newgame = Game()
     // MARK: - Method for searching
 
 }
