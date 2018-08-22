@@ -28,6 +28,8 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         super.viewDidLoad()
       imageCollectionView.dataSource=self
       imageCollectionView.delegate=self
+      playedButton.layer.cornerRadius = 10
+      wantToPlayButton.layer.cornerRadius = 10
 
     }
 
