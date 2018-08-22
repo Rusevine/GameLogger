@@ -46,12 +46,43 @@
             </objects>
             <point key="canvasLocation" x="1076" y="133.5832083958021"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="1VG-eR-TEU">
+            <objects>
+                <viewController id="GMp-m0-L0S" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Pa-6k-5NO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="MM6-yr-s3S"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pjl-mf-rSZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1851" y="143"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="LZH-R9-IL3">
+            <objects>
+                <viewController id="aPz-jq-bol" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V2x-ie-38T">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Ca1-Wv-BeD"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WEe-YV-CsS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1850" y="850"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="eUs-iD-vkz">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="WQh-aX-nir" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LtW-g2-NHu">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
