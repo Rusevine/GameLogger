@@ -15,15 +15,18 @@ class NetworkManager: NSObject {
     
     class func getDataFor(searchTerm: String, completion: @escaping ([Game]) -> ()) {
         
-        var games: [Game] = []
-        
         let urlString = "https://api-endpoint.igdb.com/games/?search=\(searchTerm)&fields=name,first_release_date,cover"
-        
         guard let percentEncodingString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
-        
         guard let gameURL = URL(string: percentEncodingString) else { return }
+        parseJSONFrom(gameURL) { (games) in
+            completion(games)
+        }
+    }
+    
+    private class func parseJSONFrom(_ url: URL, completion: @escaping ([Game]) -> ()) {
         
-        var gameRequest = URLRequest(url: gameURL)
+        var games: [Game] = []
+        var gameRequest = URLRequest(url: url)
         gameRequest.setValue("3855e34ce36dcb0a762eda82cac2f050", forHTTPHeaderField: "user-key")
         gameRequest.setValue("application/json", forHTTPHeaderField: "Accept")
         
@@ -42,8 +45,8 @@ class NetworkManager: NSObject {
             
             guard let json = try? JSONSerialization.jsonObject(with: responseData),
                 let mainArray = json as? [[String:Any]] else {
-                print("Error serialising JSON")
-                return
+                    print("Error serialising JSON")
+                    return
             }
             
             for dict in mainArray {
@@ -52,16 +55,22 @@ class NetworkManager: NSObject {
             }
             
             completion(games)
-                    
+            
         }
         task.resume()
         
     }
+
+        
+    
     
     // MARK: - Method for downloading image
     
     class func downloadImageFrom(_ url: URL, completion: @escaping (UIImage) -> ()) {
-        let task = URLSession.shared.downloadTask(with: url) { (url, urlResponse, error) in
+        
+        let stringUrl = "https:\(url)"
+        guard let finalUrl = URL(string: stringUrl) else { return }
+        let task = URLSession.shared.downloadTask(with: finalUrl) { (url, urlResponse, error) in
             
             if error != nil {
                 print("Error downloading from URL")
@@ -75,6 +84,14 @@ class NetworkManager: NSObject {
             completion(imageToReturn)
         }
         task.resume()
+    }
+    
+    class func getPopularGames(completion: @escaping ([Game]) -> Void) {
+        guard let url = URL(string: "https://api-endpoint.igdb.com/games/?fields=name,first_release_date,cover,popularity&order=popularity:desc") else { return }
+        parseJSONFrom(url) { (games) in
+            print(games.count)
+            completion(games)
+        }
     }
     
 

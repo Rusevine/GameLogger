@@ -12,10 +12,10 @@ import UIKit
     
     var name: String?
     var releaseDate: Int?
-    private var artwork: UIImage?
+    var artwork: UIImage?
     private var artworkURL: URL?
     
-    init(dictionary: [String:Any]) {
+    init(withDictionary dictionary: [String:Any]) {
         
         
         if let name = dictionary["name"] as? String {
@@ -30,16 +30,23 @@ import UIKit
             print(artworkString)
             self.artworkURL = URL(string: artworkString)
         }
-        
+                
         super.init()
     }
     
-    func getArtwork() {
+    func getArtwork(onLoad: @escaping ((UIImage) -> Void)) {
         
-        if artwork == nil {
-            guard let artworkURL = artworkURL else { artwork = #imageLiteral(resourceName: "noimage"); return }
+        if let artwork = artwork {
+          onLoad(artwork)
+        } else {
+            guard let artworkURL = artworkURL else {
+                artwork = #imageLiteral(resourceName: "noimage")
+                onLoad(artwork!)
+                return
+            }
             NetworkManager.downloadImageFrom(artworkURL) { (image) in
                 self.artwork = image
+                onLoad(image)
             }
         }
     }
