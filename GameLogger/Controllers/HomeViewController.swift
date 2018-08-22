@@ -13,16 +13,16 @@ class HomeViewController: UIViewController {
     // MARK: - IBOutlets & IBActions
 
     @IBAction func searchButtonPressed(_ sender: Any) {
-        //network.searchmethod
+        guard let text = searchField.text else { return }
+        NetworkManager.getDataFor(searchTerm: text) { (games) in
+            
+        }
     }
     
     @IBOutlet weak var searchField: UITextField!
     
     // MARK: - Properties
     
-    let networkManager = NetworkManager()
-    
-    //network.presetmethod
     
     
 }
