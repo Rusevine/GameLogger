@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		46441CAD212DD04200295D61 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46441CAC212DD04200295D61 /* DetailViewController.m */; };
+		46441CAF212DD87300295D61 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46441CAE212DD87300295D61 /* DetailViewController.swift */; };
 		BA5100EB212DAB7200A14C5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5100EA212DAB7200A14C5F /* AppDelegate.swift */; };
 		BA5100ED212DAB7200A14C5F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5100EC212DAB7200A14C5F /* HomeViewController.swift */; };
 		BA5100F0212DAB7200A14C5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA5100EE212DAB7200A14C5F /* Main.storyboard */; };
@@ -18,9 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		46441CAA212DD04200295D61 /* GameLogger-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GameLogger-Bridging-Header.h"; sourceTree = "<group>"; };
-		46441CAB212DD04200295D61 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		46441CAC212DD04200295D61 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		46441CAE212DD87300295D61 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BA5100E7212DAB7200A14C5F /* GameLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA5100EA212DAB7200A14C5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA5100EC212DAB7200A14C5F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +46,6 @@
 			children = (
 				BA5100E9212DAB7200A14C5F /* GameLogger */,
 				BA5100E8212DAB7200A14C5F /* Products */,
-				46441CAA212DD04200295D61 /* GameLogger-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,8 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				BA5100EC212DAB7200A14C5F /* HomeViewController.swift */,
-				46441CAB212DD04200295D61 /* DetailViewController.h */,
-				46441CAC212DD04200295D61 /* DetailViewController.m */,
+				46441CAE212DD87300295D61 /* DetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -181,9 +177,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46441CAD212DD04200295D61 /* DetailViewController.m in Sources */,
 				BA5100FF212DAF4400A14C5F /* NetworkManager.swift in Sources */,
 				BA5100ED212DAB7200A14C5F /* HomeViewController.swift in Sources */,
+				46441CAF212DD87300295D61 /* DetailViewController.swift in Sources */,
 				BA5100EB212DAB7200A14C5F /* AppDelegate.swift in Sources */,
 				BA510105212DB08A00A14C5F /* Game.swift in Sources */,
 			);
@@ -331,7 +327,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZUT4ATB28X;
+				DEVELOPMENT_TEAM = PQYWQB75M5;
 				INFOPLIST_FILE = GameLogger/Other/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -352,7 +348,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZUT4ATB28X;
+				DEVELOPMENT_TEAM = PQYWQB75M5;
 				INFOPLIST_FILE = GameLogger/Other/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

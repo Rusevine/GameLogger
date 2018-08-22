@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Game: NSObject {
+@objc class Game: NSObject {
     
     var name: String?
     var rating: Int?
@@ -17,7 +17,7 @@ class Game: NSObject {
     var artwork: UIImage?
     private var artworkURL: URL?
     
-    init(withDictionary dictionary: [String:Any]) {
+    init(dictionary: [String:Any]) {
         
         guard let name = dictionary["name"] as? String else {
             self.name = "Unnamed"
