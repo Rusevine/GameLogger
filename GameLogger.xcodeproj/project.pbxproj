@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		46441CAF212DD87300295D61 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46441CAE212DD87300295D61 /* DetailViewController.swift */; };
 		46441CB2212DE6C900295D61 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46441CB1212DE6C900295D61 /* DetailCollectionViewCell.swift */; };
+		46441CB5212E1DE600295D61 /* Bangers-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46441CB4212E1DDD00295D61 /* Bangers-Regular.ttf */; };
+		46441CB7212E1F8400295D61 /* GameListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46441CB6212E1F8400295D61 /* GameListViewController.swift */; };
 		BA1944CC212E00BB000804C7 /* PopularGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1944CB212E00BB000804C7 /* PopularGameCell.swift */; };
 		BA5100EB212DAB7200A14C5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5100EA212DAB7200A14C5F /* AppDelegate.swift */; };
 		BA5100ED212DAB7200A14C5F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5100EC212DAB7200A14C5F /* HomeViewController.swift */; };
@@ -23,6 +25,8 @@
 		46441CAE212DD87300295D61 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		46441CB0212DDB6900295D61 /* GameLogger-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GameLogger-Bridging-Header.h"; sourceTree = "<group>"; };
 		46441CB1212DE6C900295D61 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailCollectionViewCell.swift; path = GameLogger/Views/DetailCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		46441CB4212E1DDD00295D61 /* Bangers-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bangers-Regular.ttf"; sourceTree = "<group>"; };
+		46441CB6212E1F8400295D61 /* GameListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListViewController.swift; sourceTree = "<group>"; };
 		BA1944CB212E00BB000804C7 /* PopularGameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularGameCell.swift; sourceTree = "<group>"; };
 		BA5100E7212DAB7200A14C5F /* GameLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA5100EA212DAB7200A14C5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +50,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46441CB3212E1D8400295D61 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				46441CB4212E1DDD00295D61 /* Bangers-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		BA5100DE212DAB7200A14C5F = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +78,7 @@
 		BA5100E9212DAB7200A14C5F /* GameLogger */ = {
 			isa = PBXGroup;
 			children = (
+				46441CB3212E1D8400295D61 /* Fonts */,
 				BA5100FD212DAF1200A14C5F /* Models */,
 				BA510103212DAFC300A14C5F /* Views */,
 				BA5100FC212DAE9600A14C5F /* Controllers */,
@@ -79,6 +92,7 @@
 			children = (
 				BA5100EC212DAB7200A14C5F /* HomeViewController.swift */,
 				46441CAE212DD87300295D61 /* DetailViewController.swift */,
+				46441CB6212E1F8400295D61 /* GameListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -172,6 +186,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46441CB5212E1DE600295D61 /* Bangers-Regular.ttf in Resources */,
 				BA5100F5212DAB7300A14C5F /* LaunchScreen.storyboard in Resources */,
 				BA5100F2212DAB7300A14C5F /* Assets.xcassets in Resources */,
 				BA5100F0212DAB7200A14C5F /* Main.storyboard in Resources */,
@@ -189,6 +204,7 @@
 				BA5100ED212DAB7200A14C5F /* HomeViewController.swift in Sources */,
 				46441CAF212DD87300295D61 /* DetailViewController.swift in Sources */,
 				BA1944CC212E00BB000804C7 /* PopularGameCell.swift in Sources */,
+				46441CB7212E1F8400295D61 /* GameListViewController.swift in Sources */,
 				BA5100EB212DAB7200A14C5F /* AppDelegate.swift in Sources */,
 				BA510105212DB08A00A14C5F /* Game.swift in Sources */,
 				46441CB2212DE6C900295D61 /* DetailCollectionViewCell.swift in Sources */,
