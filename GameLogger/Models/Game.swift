@@ -11,44 +11,37 @@ import UIKit
 class Game: NSObject {
     
     var name: String?
-    var rating: Int?
     var releaseDate: Int?
-    var averageTimeToBeat: Int?
-    var artwork: UIImage?
+    private var artwork: UIImage?
     private var artworkURL: URL?
     
     init(withDictionary dictionary: [String:Any]) {
         
-        guard let name = dictionary["name"] as? String else {
-            self.name = "Unnamed"
-            return
+        
+        if let name = dictionary["name"] as? String {
+            self.name = name
         }
         
-        guard let rating = dictionary["total_rating"] as? Int else {
-            self.rating = 0
-            return
+        if let releaseDate = dictionary["first_release_date"] as? Int {
+            self.releaseDate = releaseDate
         }
         
-        guard let releaseDate = dictionary["first_release_date"] as? Int else {
-            self.releaseDate = 0
-            return
+        if let artworkDict = dictionary["cover"] as? [String: Any], let artworkString = artworkDict["url"] as? String  {
+            print(artworkString)
+            self.artworkURL = URL(string: artworkString)
         }
         
-        guard let timeToBeatDict = dictionary["time_to_beat"] as? [String:Int], let timeToBeat = timeToBeatDict["normally"] else {
-            self.averageTimeToBeat = 0
-            return
-        }
+        super.init()
+    }
+    
+    func getArtwork() {
         
-        guard let artworkDict = dictionary["cover"] as? [String: String], let artworkURL = artworkDict["url"] else {
-            self.artworkURL = nil
-            return
+        if artwork == nil {
+            guard let artworkURL = artworkURL else { artwork = #imageLiteral(resourceName: "noimage"); return }
+            NetworkManager.downloadImageFrom(artworkURL) { (image) in
+                self.artwork = image
+            }
         }
-        
-        self.name = name
-        self.rating = rating
-        self.releaseDate = releaseDate
-        self.averageTimeToBeat = timeToBeat
-        self.artworkURL = URL(string: artworkURL)
     }
 
 }
