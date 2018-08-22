@@ -50,8 +50,8 @@ class NetworkManager: NSObject {
             }
             
             for dict in mainArray {
-         //       let newGame = Game(withDictionary: dict)
-       //         games.append(newGame)
+                let newGame = Game(withDictionary: dict)
+                games.append(newGame)
             }
             
             completion(games)

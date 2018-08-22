@@ -43,7 +43,6 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
   }
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "detailViewCell", for: indexPath) as! DetailCollectionViewCell
-    
     cell.configure(with: images[indexPath.row])
     
     return cell

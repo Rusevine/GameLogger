@@ -14,6 +14,13 @@ class HomeViewController: UIViewController {
 
     @IBAction func searchButtonPressed(_ sender: Any) {
         guard let text = searchField.text else { return }
+        NetworkManager.getDataFor(searchTerm: text) { (games) in
+            self.searchGames = games
+            OperationQueue.main.addOperation({
+                self.performSegue(withIdentifier: "SearchSegue", sender: nil)
+                self.searchField.text = ""
+            })
+        }
     }
     
     @IBOutlet weak var searchField: UITextField!
@@ -41,6 +48,15 @@ class HomeViewController: UIViewController {
             OperationQueue.main.addOperation({
                 self.collectionView.reloadData()
             })
+        }
+    }
+    
+    // MARK: - Segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SearchSegue" {
+            let vc = segue.destination as! SearchResultsViewController
+            vc.games = searchGames
         }
     }
 
