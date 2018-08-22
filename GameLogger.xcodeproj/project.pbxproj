@@ -10,6 +10,8 @@
 		46441CAF212DD87300295D61 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46441CAE212DD87300295D61 /* DetailViewController.swift */; };
 		46441CB2212DE6C900295D61 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46441CB1212DE6C900295D61 /* DetailCollectionViewCell.swift */; };
 		BA1944CC212E00BB000804C7 /* PopularGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1944CB212E00BB000804C7 /* PopularGameCell.swift */; };
+		BA1944CE212E1B38000804C7 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1944CD212E1B38000804C7 /* SearchResultsViewController.swift */; };
+		BA1944D0212E1B4F000804C7 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1944CF212E1B4F000804C7 /* ResultCell.swift */; };
 		BA5100EB212DAB7200A14C5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5100EA212DAB7200A14C5F /* AppDelegate.swift */; };
 		BA5100ED212DAB7200A14C5F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5100EC212DAB7200A14C5F /* HomeViewController.swift */; };
 		BA5100F0212DAB7200A14C5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA5100EE212DAB7200A14C5F /* Main.storyboard */; };
@@ -24,6 +26,8 @@
 		46441CB0212DDB6900295D61 /* GameLogger-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GameLogger-Bridging-Header.h"; sourceTree = "<group>"; };
 		46441CB1212DE6C900295D61 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailCollectionViewCell.swift; path = GameLogger/Views/DetailCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		BA1944CB212E00BB000804C7 /* PopularGameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularGameCell.swift; sourceTree = "<group>"; };
+		BA1944CD212E1B38000804C7 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		BA1944CF212E1B4F000804C7 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 		BA5100E7212DAB7200A14C5F /* GameLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA5100EA212DAB7200A14C5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA5100EC212DAB7200A14C5F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 			children = (
 				BA5100EC212DAB7200A14C5F /* HomeViewController.swift */,
 				46441CAE212DD87300295D61 /* DetailViewController.swift */,
+				BA1944CD212E1B38000804C7 /* SearchResultsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -109,6 +114,7 @@
 				BA5100EE212DAB7200A14C5F /* Main.storyboard */,
 				46441CB1212DE6C900295D61 /* DetailCollectionViewCell.swift */,
 				BA1944CB212E00BB000804C7 /* PopularGameCell.swift */,
+				BA1944CF212E1B4F000804C7 /* ResultCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -186,9 +192,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA5100FF212DAF4400A14C5F /* NetworkManager.swift in Sources */,
+				BA1944CE212E1B38000804C7 /* SearchResultsViewController.swift in Sources */,
 				BA5100ED212DAB7200A14C5F /* HomeViewController.swift in Sources */,
 				46441CAF212DD87300295D61 /* DetailViewController.swift in Sources */,
 				BA1944CC212E00BB000804C7 /* PopularGameCell.swift in Sources */,
+				BA1944D0212E1B4F000804C7 /* ResultCell.swift in Sources */,
 				BA5100EB212DAB7200A14C5F /* AppDelegate.swift in Sources */,
 				BA510105212DB08A00A14C5F /* Game.swift in Sources */,
 				46441CB2212DE6C900295D61 /* DetailCollectionViewCell.swift in Sources */,
