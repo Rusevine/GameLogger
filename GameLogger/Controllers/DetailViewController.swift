@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class DetailViewController: UIViewController {
     
@@ -18,13 +19,14 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var wantToPlayButton: UIButton!
   
     var game : Game?
-  
+    var realm: Realm!
   
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setViews()
+        realm = try! Realm()
     }
     
     // MARK: - Custom Methods
@@ -41,8 +43,22 @@ class DetailViewController: UIViewController {
     
     func getGameScreenshots() {
         if let game = game {
-            NetworkManager.getScreenshots(game: game)
+            DispatchQueue.global(qos: .background).async {
+                NetworkManager.getScreenshots(game: game)
+                DispatchQueue.main.async {
+                    self.imageCollectionView.reloadData()
+                }
+            }
         }
+    }
+    
+    @IBAction func havePlayedPushed(_ sender: Any) {
+        guard let game = game else { fatalError() }
+        let gameToSave = HavePlayedGame(withGame: game)
+        try! realm.write {
+            realm.add(gameToSave)
+        }
+        
     }
 }
 
@@ -62,4 +78,6 @@ extension DetailViewController: UICollectionViewDataSource {
         return cell
     }
 }
+
+
 

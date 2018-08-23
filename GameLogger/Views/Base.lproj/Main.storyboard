@@ -260,6 +260,9 @@
                                 <state key="normal" title="Played">
                                     <color key="titleColor" red="0.4500978464" green="0.24990593559999999" blue="0.46708439089999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="havePlayedPushed:" destination="GMp-m0-L0S" eventType="touchUpInside" id="ULh-N0-a2D"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBG-bb-aHS">
                                 <rect key="frame" x="193" y="528" width="168" height="70"/>
@@ -306,27 +309,55 @@
             </objects>
             <point key="canvasLocation" x="3756" y="134"/>
         </scene>
-        <!--Game List View Controller-->
+        <!--Games To Play-->
         <scene sceneID="DgM-8p-OBv">
             <objects>
-                <viewController id="ogi-vF-yId" customClass="GameListViewController" customModule="GameLogger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ogi-vF-yId" customClass="GamesHavePlayedViewController" customModule="GameLogger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kam-Ka-Ybo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o3i-95-AdR">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="rtM-f2-WSv">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GameListCell" rowHeight="97" id="6OK-wD-2pb" customClass="GameListCell" customModule="GameLogger" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="97"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rtM-f2-WSv" id="nNJ-e2-wY7">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6OK-wD-2pb" id="JQv-7Z-O69">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="96.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Z1" translatesAutoresizingMaskIntoConstraints="NO" id="Ndf-ba-ZfG">
+                                                    <rect key="frame" x="15" y="11" width="78" height="78"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPi-iJ-Xv9">
+                                                    <rect key="frame" x="107" y="40" width="253" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="UPi-iJ-Xv9" firstAttribute="top" secondItem="JQv-7Z-O69" secondAttribute="top" constant="40" id="AuN-pg-deD"/>
+                                                <constraint firstItem="Ndf-ba-ZfG" firstAttribute="width" secondItem="JQv-7Z-O69" secondAttribute="width" multiplier="0.15" constant="21.75" id="IZD-gd-m1V"/>
+                                                <constraint firstAttribute="trailing" secondItem="UPi-iJ-Xv9" secondAttribute="trailing" constant="15" id="MFp-KR-3fe"/>
+                                                <constraint firstItem="Ndf-ba-ZfG" firstAttribute="top" secondItem="JQv-7Z-O69" secondAttribute="top" constant="11" id="RoH-KW-4Ly"/>
+                                                <constraint firstItem="UPi-iJ-Xv9" firstAttribute="leading" secondItem="Ndf-ba-ZfG" secondAttribute="trailing" constant="14" id="SlW-i6-ey6"/>
+                                                <constraint firstItem="Ndf-ba-ZfG" firstAttribute="leading" secondItem="JQv-7Z-O69" secondAttribute="leading" constant="15" id="acd-LI-cWg"/>
+                                                <constraint firstItem="Ndf-ba-ZfG" firstAttribute="height" secondItem="JQv-7Z-O69" secondAttribute="height" multiplier="0.8" id="eYK-o4-jYW"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="artwork" destination="Ndf-ba-ZfG" id="30l-MG-v5b"/>
+                                            <outlet property="title" destination="UPi-iJ-Xv9" id="S99-Wx-zmK"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ogi-vF-yId" id="nU5-vp-wvb"/>
+                                    <outlet property="delegate" destination="ogi-vF-yId" id="JfZ-y6-fld"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -338,10 +369,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IQZ-wc-qjj"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Games To Play" id="ibp-Tc-e89"/>
+                    <connections>
+                        <outlet property="tableView" destination="o3i-95-AdR" id="0dR-Rm-cok"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GOG-FW-owy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2073" y="856"/>
+            <point key="canvasLocation" x="137" y="870"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="LZH-R9-IL3">
@@ -392,17 +427,18 @@
                     </tabBar>
                     <connections>
                         <segue destination="4ej-r2-90R" kind="relationship" relationship="viewControllers" id="3jq-2L-CrX"/>
+                        <segue destination="ogi-vF-yId" kind="relationship" relationship="viewControllers" id="AKW-RK-cDB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4zF-q1-bRb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
-        <!--Home-->
+        <!--Search-->
         <scene sceneID="Ged-Mq-lmJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4ej-r2-90R" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="ZvF-Wd-hTA"/>
+                    <tabBarItem key="tabBarItem" title="Search" id="ZvF-Wd-hTA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="A4N-b4-5y4">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
