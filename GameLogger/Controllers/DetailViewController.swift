@@ -20,6 +20,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
   @IBOutlet weak var wantToPlayButton: UIButton!
   
   let images = [UIImage(named: "Z1"),UIImage(named: "Z2"),UIImage(named: "Z3")]
+  var activeGame : Game?
   
   
   
@@ -30,6 +31,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
       imageCollectionView.delegate=self
       playedButton.layer.cornerRadius = 10
       wantToPlayButton.layer.cornerRadius = 10
+      NetworkManager.getScreenshots(game: activeGame!)
 
     }
 

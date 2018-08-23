@@ -92,6 +92,18 @@ class NetworkManager: NSObject {
             completion(games)
         }
     }
-    
-
+  // MARK: - Method for downloading images when detailView is accessed
+  
+    class func getScreenshots(game: Game){
+        for url in game.screenshotsURL{
+        
+        do{
+          let data = try Data(contentsOf: url!)
+          let image = UIImage(data: data)
+          game.screenshots.append(image)
+        } catch {
+          print("Unable to load data")
+        }
+      }
+    }
 }
