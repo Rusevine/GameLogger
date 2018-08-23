@@ -18,6 +18,17 @@ class SearchResultsViewController: UIViewController {
     
     var games: [Game]?
 
+    // MARK: - Segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let games = games else { return }
+        if segue.identifier == "CellSelectedSegue" {
+            let tableViewCell = sender as! UITableViewCell
+            let vc = segue.destination as! DetailViewController
+            guard let indexPath = tableView.indexPath(for: tableViewCell) else { return }
+            vc.game = games[indexPath.row]
+        }
+    }
 
 }
 

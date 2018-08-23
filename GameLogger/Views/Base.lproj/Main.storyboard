@@ -162,6 +162,7 @@
                                         <connections>
                                             <outlet property="gameImageView" destination="blT-46-e6w" id="hGQ-Df-Prw"/>
                                             <outlet property="gameLabel" destination="6si-Vp-FYv" id="15P-vR-2E8"/>
+                                            <segue destination="GMp-m0-L0S" kind="show" identifier="CellSelectedSegue" id="N8n-dB-9j6"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -197,13 +198,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Legend of Zelda" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3sV-Ug-Ucl">
-                                <rect key="frame" x="10" y="35" width="355" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Legend of Zelda" textAlignment="center" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3sV-Ug-Ucl">
+                                <rect key="frame" x="10" y="79" width="355" height="43"/>
                                 <color key="backgroundColor" red="0.11764705882352941" green="0.043137254901960784" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.45469423925399077" green="0.74119606598984777" blue="0.59680650697917181" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="UKG-wL-Sol"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="Bangers-Regular" family="Bangers" pointSize="40"/>
                                 <color key="textColor" red="0.4500978464233959" green="0.24990593557360538" blue="0.46708439086294429" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -211,7 +209,7 @@
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="12K-Tq-sF4">
-                                <rect key="frame" x="10" y="115" width="355" height="200"/>
+                                <rect key="frame" x="10" y="159" width="355" height="200"/>
                                 <color key="backgroundColor" red="0.11764705882352941" green="0.043137254901960784" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="I0n-dz-Rcs"/>
@@ -252,11 +250,11 @@
                                 </connections>
                             </collectionView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K0h-Lx-QGv">
-                                <rect key="frame" x="15" y="330" width="345" height="232"/>
+                                <rect key="frame" x="15" y="374" width="345" height="139"/>
                                 <color key="backgroundColor" red="0.11764705882352941" green="0.043137254901960784" blue="0.10196078431372549" alpha="0.65456442636986301" colorSpace="custom" customColorSpace="sRGB"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a67-6h-rrL">
-                                <rect key="frame" x="15" y="577" width="167" height="70"/>
+                                <rect key="frame" x="15" y="528" width="167" height="70"/>
                                 <color key="backgroundColor" red="0.11768321700000001" green="0.044823722779999998" blue="0.1037192977" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="Bangers-Regular" family="Bangers" pointSize="28"/>
                                 <state key="normal" title="Played">
@@ -264,7 +262,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBG-bb-aHS">
-                                <rect key="frame" x="193" y="577" width="168" height="70"/>
+                                <rect key="frame" x="193" y="528" width="168" height="70"/>
                                 <color key="backgroundColor" red="0.11764705882352941" green="0.043137254901960784" blue="0.10196078431372549" alpha="0.91903895547945202" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="jgL-XV-eEh"/>
@@ -278,14 +276,14 @@
                         <color key="backgroundColor" red="0.15871940940081619" green="0.06149288266883024" blue="0.142830049068741" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="3sV-Ug-Ucl" firstAttribute="top" secondItem="MM6-yr-s3S" secondAttribute="top" constant="15" id="1eH-Oh-5H9"/>
-                            <constraint firstItem="12K-Tq-sF4" firstAttribute="top" secondItem="3sV-Ug-Ucl" secondAttribute="bottom" constant="20" id="1qe-el-8M6"/>
-                            <constraint firstItem="rBG-bb-aHS" firstAttribute="top" secondItem="K0h-Lx-QGv" secondAttribute="bottom" constant="15" id="2G5-KD-tyF"/>
                             <constraint firstItem="12K-Tq-sF4" firstAttribute="trailing" secondItem="3sV-Ug-Ucl" secondAttribute="trailing" id="4OY-iF-5Tf"/>
                             <constraint firstItem="a67-6h-rrL" firstAttribute="leading" secondItem="MM6-yr-s3S" secondAttribute="leading" constant="15" id="5QQ-yt-Wc2"/>
+                            <constraint firstItem="12K-Tq-sF4" firstAttribute="top" secondItem="3sV-Ug-Ucl" secondAttribute="bottom" constant="37" id="8Z3-2P-a2t"/>
                             <constraint firstItem="MM6-yr-s3S" firstAttribute="bottom" secondItem="a67-6h-rrL" secondAttribute="bottom" constant="20" id="9ey-rC-2Wy"/>
                             <constraint firstItem="12K-Tq-sF4" firstAttribute="leading" secondItem="3sV-Ug-Ucl" secondAttribute="leading" id="Buy-p6-LXW"/>
                             <constraint firstItem="MM6-yr-s3S" firstAttribute="trailing" secondItem="K0h-Lx-QGv" secondAttribute="trailing" constant="15" id="GG1-VA-BZ2"/>
                             <constraint firstItem="a67-6h-rrL" firstAttribute="width" secondItem="rBG-bb-aHS" secondAttribute="width" constant="-1" id="H3T-vh-d77"/>
+                            <constraint firstItem="rBG-bb-aHS" firstAttribute="top" secondItem="K0h-Lx-QGv" secondAttribute="bottom" constant="15" id="R0c-h6-1cE"/>
                             <constraint firstItem="MM6-yr-s3S" firstAttribute="trailing" secondItem="3sV-Ug-Ucl" secondAttribute="trailing" constant="10" id="R8s-Yi-q7N"/>
                             <constraint firstItem="K0h-Lx-QGv" firstAttribute="top" secondItem="12K-Tq-sF4" secondAttribute="bottom" constant="15" id="RWo-1a-AXb"/>
                             <constraint firstItem="MM6-yr-s3S" firstAttribute="trailing" secondItem="rBG-bb-aHS" secondAttribute="trailing" constant="14" id="X51-6r-DH0"/>

@@ -10,8 +10,7 @@ import UIKit
 
 class NetworkManager: NSObject {
     
-    // MARK: - Method for preset collection view
-        // MARK: - Method for searching
+    // MARK: - Method for searching
     
     class func getDataFor(searchTerm: String, completion: @escaping ([Game]) -> ()) {
         
@@ -22,6 +21,9 @@ class NetworkManager: NSObject {
             completion(games)
         }
     }
+    
+    // MARK: - Method for parsing JSON
+
     
     private class func parseJSONFrom(_ url: URL, completion: @escaping ([Game]) -> ()) {
         
@@ -61,8 +63,6 @@ class NetworkManager: NSObject {
         
     }
 
-        
-    
     
     // MARK: - Method for downloading image
     
@@ -92,18 +92,21 @@ class NetworkManager: NSObject {
             completion(games)
         }
     }
+    
+    
   // MARK: - Method for downloading images when detailView is accessed
   
     class func getScreenshots(game: Game){
-        for url in game.screenshotsURL{
-        
-        do{
-          let data = try Data(contentsOf: url!)
-          let image = UIImage(data: data)
-          game.screenshots.append(image)
-        } catch {
-          print("Unable to load data")
+        guard let screenshotUrls = game.screenshotsURLs else { return }
+        for url in screenshotUrls{
+            do{
+                let data = try Data(contentsOf: url)
+                if let image = UIImage(data: data) {
+                    game.screenshots?.append(image)
+                }
+            } catch let error {
+                print("Unable to load data: \(error)")
+            }
         }
-      }
     }
 }

@@ -67,7 +67,6 @@ class HomeViewController: UIViewController {
         }
     }
 
-    
 }
 
 // MARK: - CollectionView Data Source
@@ -76,7 +75,6 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return popularGames.count
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PopularGameCell", for: indexPath) as! PopularGameCell
         cell.configureCellWith(popularGames[indexPath.row])

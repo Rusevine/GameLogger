@@ -13,8 +13,8 @@ import UIKit
     var name: String?
     var releaseDate: Int?
     var artwork: UIImage?
-    var screenshots: [UIImage?] = [UIImage]()
-    var screenshotsURL: [URL?] = [URL]()
+    var screenshots: [UIImage]?
+    var screenshotsURLs: [URL]?
     private var artworkURL: URL?
   
     
@@ -29,19 +29,21 @@ import UIKit
         }
         
         if let artworkDict = dictionary["cover"] as? [String: Any], let artworkString = artworkDict["url"] as? String  {
-            print(artworkString)
             self.artworkURL = URL(string: artworkString)
         }
       
-      if let screenshotsArr : [[String:Any]] = dictionary["screenshots"] as? [[String: Any]]
-      {
-        for screenshot in screenshotsArr{
-            let suffix = screenshot["url"] as! String
-            let screenshotUrl = "https:\(suffix)"
-            let url = URL(string: screenshotUrl)
-            self.screenshotsURL.append(url)
+        if let screenshotsArr : [[String:Any]] = dictionary["screenshots"] as? [[String: Any]] {
+            var tempScreenshotURLs = [URL]()
+            screenshots = []
+            for screenshot in screenshotsArr {
+                let suffix = screenshot["url"] as! String
+                let screenshotUrl = "https:\(suffix)"
+                if let url = URL(string: screenshotUrl) {
+                    tempScreenshotURLs.append(url)
+                }
+            }
+            screenshotsURLs = tempScreenshotURLs
         }
-      }
         super.init()
     }
     
@@ -61,13 +63,6 @@ import UIKit
             }
         }
     }
-  
-//  func getScreenshots(){
-//    for screenshot in screenshotsURL{
-//      NetworkManager.downloadImageFrom(screenshot) {  (image) in
-//        self.screenshots.append(image)
-//    }
-//  }
-//
-//}
 }
+
+

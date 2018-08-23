@@ -8,45 +8,58 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class DetailViewController: UIViewController {
+    
+    // MARK: - IBOutlets
+  
+    @IBOutlet weak var gameNameLabel: UILabel!
+    @IBOutlet weak var imageCollectionView: UICollectionView!
+    @IBOutlet weak var playedButton: UIButton!
+    @IBOutlet weak var wantToPlayButton: UIButton!
+  
+    var game : Game?
   
   
-  @IBOutlet weak var gameNameLabel: UILabel!
-  
-  @IBOutlet weak var imageCollectionView: UICollectionView!
-  
-  @IBOutlet weak var playedButton: UIButton!
-  
-  @IBOutlet weak var wantToPlayButton: UIButton!
-  
-  let images = [UIImage(named: "Z1"),UIImage(named: "Z2"),UIImage(named: "Z3")]
-  var activeGame : Game?
-  
-  
-  
+    // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-      imageCollectionView.dataSource=self
-      imageCollectionView.delegate=self
-      playedButton.layer.cornerRadius = 10
-      wantToPlayButton.layer.cornerRadius = 10
-      NetworkManager.getScreenshots(game: activeGame!)
-
+        setViews()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return images.count
-  }
-  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "detailViewCell", for: indexPath) as! DetailCollectionViewCell
-    cell.configure(with: images[indexPath.row])
     
-    return cell
-  }
+    // MARK: - Custom Methods
+    
+    func setViews() {
+        playedButton.layer.cornerRadius = 10
+        wantToPlayButton.layer.cornerRadius = 10
+        if let game = game {
+            gameNameLabel.text = game.name
+            gameNameLabel.adjustsFontSizeToFitWidth = true
+        }
+        getGameScreenshots()
+    }
+    
+    func getGameScreenshots() {
+        if let game = game {
+            NetworkManager.getScreenshots(game: game)
+        }
+    }
 }
+
+// MARK: - Collection View Data Source
+
+extension DetailViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let screenshots = game?.screenshots else { return 0 }
+        return screenshots.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "detailViewCell", for: indexPath) as! DetailCollectionViewCell
+        if let screenshots = game?.screenshots {
+           cell.imageView.image = screenshots[indexPath.row]
+        }
+        return cell
+    }
+}
+

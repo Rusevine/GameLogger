@@ -11,10 +11,5 @@ import UIKit
 class DetailCollectionViewCell: UICollectionViewCell {
   
   @IBOutlet weak var imageView: UIImageView!
-  
-//  let game : Game!
-  
-  internal func configure(with image: UIImage?){
-    imageView.image = image
-  }
+
 }
