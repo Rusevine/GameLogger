@@ -17,9 +17,15 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var playedButton: UIButton!
     @IBOutlet weak var wantToPlayButton: UIButton!
+
   
     var game : Game?
     var realm: Realm!
+    @IBOutlet weak var ratingLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+ 
+  
+
   
     // MARK: - Life Cycle
 
@@ -37,6 +43,10 @@ class DetailViewController: UIViewController {
         if let game = game {
             gameNameLabel.text = game.name
             gameNameLabel.adjustsFontSizeToFitWidth = true
+            let roundedRating = game.gameRating?.rounded()
+            ratingLabel.text = "Rating: \(String(describing: roundedRating!))"
+            descriptionLabel.text = "Description: \(String(describing: game.summary!))"
+            
         }
         getGameScreenshots()
     }
