@@ -89,7 +89,6 @@ class NetworkManager: NSObject {
     class func getPopularGames(completion: @escaping ([Game]) -> Void) {
         guard let url = URL(string: "https://api-endpoint.igdb.com/games/?fields=name,first_release_date,cover,screenshots,popularity&order=popularity:desc") else { return }
         parseJSONFrom(url) { (games) in
-            print(games.count)
             completion(games)
         }
     }

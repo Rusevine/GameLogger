@@ -13,6 +13,13 @@ class HomeViewController: UIViewController {
     // MARK: - IBOutlets & IBActions
 
     @IBAction func searchButtonPressed(_ sender: Any) {
+        if searchField.text!.isEmpty {
+            let ac = UIAlertController(title: "Error", message: "Please Input A Search Term.", preferredStyle: .alert)
+            let okay = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            ac.addAction(okay)
+            present(ac, animated: true, completion: nil)
+            return
+        }
         guard let text = searchField.text else { return }
         NetworkManager.getDataFor(searchTerm: text) { (games) in
             self.searchGames = games

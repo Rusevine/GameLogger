@@ -32,10 +32,10 @@ import UIKit
             print(artworkString)
             self.artworkURL = URL(string: artworkString)
         }
-      if let screenshotsArr : [[String:Any]] = dictionary["screenshots"] as? [[String: Any]]
-      {
-        for screenshot in screenshotsArr{
-          self.screenshotsURL.append(URL(string: screenshot["url"] as! String))
+        
+        if let screenshotsArr = dictionary["screenshots"] as? [[String: Any]] {
+            for screenshot in screenshotsArr {
+                self.screenshotsURL.append(URL(string: screenshot["url"] as! String))
         }
   
       }
