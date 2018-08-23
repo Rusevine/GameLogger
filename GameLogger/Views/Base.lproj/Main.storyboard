@@ -202,7 +202,7 @@
                                 <rect key="frame" x="-0.5" y="-0.5" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Legend of Zelda" textAlignment="center" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3sV-Ug-Ucl">
-                                <rect key="frame" x="10" y="79" width="355" height="35"/>
+                                <rect key="frame" x="10" y="79" width="355" height="43"/>
                                 <color key="backgroundColor" red="0.11764705882352941" green="0.043137254901960784" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.45469423925399077" green="0.74119606598984777" blue="0.59680650697917181" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="Bangers-Regular" family="Bangers" pointSize="40"/>
@@ -211,19 +211,19 @@
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0h-Lx-QGv">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0h-Lx-QGt">
                                 <rect key="frame" x="10" y="304" width="355" height="209"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Isa-bg-Obk">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Isa-bg-Obk">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="209"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vK2-j8-4hg">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Rating:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vK2-j8-4hg">
                                                 <rect key="frame" x="8" y="8" width="355" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmi-40-FFb">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Description:" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmi-40-FFb">
                                                 <rect key="frame" x="8" y="39" width="355" height="154"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="154" id="rFp-L8-lXg"/>
@@ -249,10 +249,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" secondItem="Isa-bg-Obk" secondAttribute="height" id="EB7-BO-ndF"/>
                                     <constraint firstAttribute="trailing" secondItem="Isa-bg-Obk" secondAttribute="trailing" id="JTg-1g-lHX"/>
-                                    <constraint firstItem="Isa-bg-Obk" firstAttribute="width" secondItem="K0h-Lx-QGv" secondAttribute="width" id="Z1s-ct-qge"/>
+                                    <constraint firstItem="Isa-bg-Obk" firstAttribute="width" secondAttribute="width" id="Z1s-ct-qge"/>
                                     <constraint firstAttribute="bottom" secondItem="Isa-bg-Obk" secondAttribute="bottom" constant="299" id="fPN-Jz-6lj"/>
-                                    <constraint firstItem="Isa-bg-Obk" firstAttribute="leading" secondItem="K0h-Lx-QGv" secondAttribute="leading" id="jzq-hN-WjM"/>
-                                    <constraint firstItem="Isa-bg-Obk" firstAttribute="top" secondItem="K0h-Lx-QGv" secondAttribute="top" id="vNw-J8-THr"/>
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a67-6h-rrL">
@@ -263,7 +261,7 @@
                                     <color key="titleColor" red="0.4500978464" green="0.24990593559999999" blue="0.46708439089999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBG-bb-aHS">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBG-bb-aHd">
                                 <rect key="frame" x="193" y="528" width="168" height="70"/>
                                 <color key="backgroundColor" red="0.11768321700000001" green="0.044823722779999998" blue="0.1037192977" alpha="0.83842572773972601" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -275,7 +273,7 @@
                                 </state>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="12K-Tq-sF4">
-                                <rect key="frame" x="10" y="124" width="355" height="170"/>
+                                <rect key="frame" x="10" y="132" width="355" height="170"/>
                                 <color key="backgroundColor" red="0.11764705882352941" green="0.043137254901960784" blue="0.10196078431372549" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="170" id="wAe-na-OcK"/>
@@ -317,11 +315,12 @@
                                 </connections>
                             </collectionView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K0h-Lx-QGv">
-                                <rect key="frame" x="15" y="374" width="345" height="139"/>
+                                <rect key="frame" x="10" y="312" width="355" height="201"/>
                                 <color key="backgroundColor" red="0.11764705882352941" green="0.043137254901960784" blue="0.10196078431372549" alpha="0.65456442636986301" colorSpace="custom" customColorSpace="sRGB"/>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a67-6h-rrL">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a67-6h-rrK">
                                 <rect key="frame" x="15" y="528" width="167" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.11768321700000001" green="0.044823722779999998" blue="0.1037192977" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="Bangers-Regular" family="Bangers" pointSize="28"/>
                                 <state key="normal" title="Played">
@@ -335,14 +334,13 @@
                                 <rect key="frame" x="193" y="528" width="168" height="70"/>
                                 <color key="backgroundColor" red="0.11764705882352941" green="0.043137254901960784" blue="0.10196078431372549" alpha="0.91903895547945202" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="jgL-XV-eEh"/>
+                                    <constraint firstAttribute="height" constant="70" id="jgL-XV-eEj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Bangers-Regular" family="Bangers" pointSize="28"/>
                                 <state key="normal" title="Want to Play">
                                     <color key="titleColor" red="0.45098039215686275" green="0.25098039215686274" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>
-
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.97116655529999996" blue="0.95448619170000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
