@@ -245,7 +245,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" red="0.11764705882352941" green="0.043137254901960784" blue="0.10196078431372549" alpha="0.65456442636986301" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.11764705882352941" green="0.043137254901960784" blue="0.10196078431372549" alpha="0.1248394691780822" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" secondItem="Isa-bg-Obk" secondAttribute="height" id="EB7-BO-ndF"/>
                                     <constraint firstAttribute="trailing" secondItem="Isa-bg-Obk" secondAttribute="trailing" id="JTg-1g-lHX"/>
@@ -257,7 +257,7 @@
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a67-6h-rrL">
                                 <rect key="frame" x="15" y="528" width="167" height="70"/>
-                                <color key="backgroundColor" red="0.11768321700000001" green="0.044823722779999998" blue="0.1037192977" alpha="0.24523758561643835" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.11768321700000001" green="0.044823722779999998" blue="0.1037192977" alpha="0.67797517123287676" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="Bangers-Regular" family="Bangers" pointSize="28"/>
                                 <state key="normal" title="Played">
                                     <color key="titleColor" red="0.4500978464" green="0.24990593559999999" blue="0.46708439089999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -265,7 +265,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBG-bb-aHS">
                                 <rect key="frame" x="193" y="528" width="168" height="70"/>
-                                <color key="backgroundColor" red="0.11764705882352941" green="0.043137254901960784" blue="0.10196078431372549" alpha="0.2423747859589041" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.11768321700000001" green="0.044823722779999998" blue="0.1037192977" alpha="0.83842572773972601" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="jgL-XV-eEh"/>
                                 </constraints>
@@ -276,7 +276,7 @@
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="12K-Tq-sF4">
                                 <rect key="frame" x="10" y="124" width="355" height="170"/>
-                                <color key="backgroundColor" red="0.11764705882352941" green="0.043137254901960784" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.11764705882352941" green="0.043137254901960784" blue="0.10196078431372549" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="170" id="wAe-na-OcK"/>
                                 </constraints>
