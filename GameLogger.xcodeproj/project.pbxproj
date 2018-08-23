@@ -11,6 +11,7 @@
 		46441CB2212DE6C900295D61 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46441CB1212DE6C900295D61 /* DetailCollectionViewCell.swift */; };
 		46441CB5212E1DE600295D61 /* Bangers-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46441CB4212E1DDD00295D61 /* Bangers-Regular.ttf */; };
 		46441CB7212E1F8400295D61 /* GameListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46441CB6212E1F8400295D61 /* GameListViewController.swift */; };
+		46441CD9212F47D900295D61 /* galaxy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 46441CD8212F47D900295D61 /* galaxy.jpg */; };
 		BA1944CC212E00BB000804C7 /* PopularGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1944CB212E00BB000804C7 /* PopularGameCell.swift */; };
 		BA1944CE212E1B38000804C7 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1944CD212E1B38000804C7 /* SearchResultsViewController.swift */; };
 		BA1944D0212E1B4F000804C7 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1944CF212E1B4F000804C7 /* ResultCell.swift */; };
@@ -29,6 +30,7 @@
 		46441CB1212DE6C900295D61 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailCollectionViewCell.swift; path = GameLogger/Views/DetailCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		46441CB4212E1DDD00295D61 /* Bangers-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bangers-Regular.ttf"; sourceTree = "<group>"; };
 		46441CB6212E1F8400295D61 /* GameListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListViewController.swift; sourceTree = "<group>"; };
+		46441CD8212F47D900295D61 /* galaxy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = galaxy.jpg; sourceTree = "<group>"; };
 		BA1944CB212E00BB000804C7 /* PopularGameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularGameCell.swift; sourceTree = "<group>"; };
 		BA1944CD212E1B38000804C7 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		BA1944CF212E1B4F000804C7 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				BA5100EA212DAB7200A14C5F /* AppDelegate.swift */,
+				46441CD8212F47D900295D61 /* galaxy.jpg */,
 				BA5100F1212DAB7300A14C5F /* Assets.xcassets */,
 				BA5100F3212DAB7300A14C5F /* LaunchScreen.storyboard */,
 				BA5100F6212DAB7300A14C5F /* Info.plist */,
@@ -193,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46441CB5212E1DE600295D61 /* Bangers-Regular.ttf in Resources */,
+				46441CD9212F47D900295D61 /* galaxy.jpg in Resources */,
 				BA5100F5212DAB7300A14C5F /* LaunchScreen.storyboard in Resources */,
 				BA5100F2212DAB7300A14C5F /* Assets.xcassets in Resources */,
 				BA5100F0212DAB7200A14C5F /* Main.storyboard in Resources */,
