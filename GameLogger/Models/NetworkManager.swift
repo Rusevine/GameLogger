@@ -14,7 +14,7 @@ class NetworkManager: NSObject {
     
     class func getDataFor(searchTerm: String, completion: @escaping ([Game]) -> ()) {
         
-        let urlString = "https://api-endpoint.igdb.com/games/?search=\(searchTerm)&fields=name,first_release_date,cover,screenshots"
+        let urlString = "https://api-endpoint.igdb.com/games/?search=\(searchTerm)&fields=name,first_release_date,cover,screenshots,id,summary,rating"
         guard let percentEncodingString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
         guard let gameURL = URL(string: percentEncodingString) else { return }
         parseJSONFrom(gameURL) { (games) in
@@ -87,7 +87,7 @@ class NetworkManager: NSObject {
     }
     
     class func getPopularGames(completion: @escaping ([Game]) -> Void) {
-        guard let url = URL(string: "https://api-endpoint.igdb.com/games/?fields=name,first_release_date,cover,screenshots,popularity&order=popularity:desc") else { return }
+        guard let url = URL(string: "https://api-endpoint.igdb.com/games/?fields=name,first_release_date,cover,screenshots,id,summary,rating,popularity&order=popularity:desc") else { return }
         parseJSONFrom(url) { (games) in
             completion(games)
         }

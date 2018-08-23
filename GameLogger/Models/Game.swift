@@ -15,6 +15,9 @@ import UIKit
     var artwork: UIImage?
     var screenshots: [UIImage]?
     var screenshotsURLs: [URL]?
+    var gameId: Int?
+    var gameRating: Double?
+    var summary: String?
     private var artworkURL: URL?
   
     
@@ -26,6 +29,17 @@ import UIKit
         
         if let releaseDate = dictionary["first_release_date"] as? Int {
             self.releaseDate = releaseDate
+        }
+      
+        if let gameId = dictionary["id"] as? Int {
+          self.gameId = gameId
+        }
+        if let summary = dictionary["summary"] as? String {
+          self.summary = summary
+        }
+      
+        if let gameRating = dictionary["rating"] as? Double {
+          self.gameRating = gameRating
         }
         
         if let artworkDict = dictionary["cover"] as? [String: Any], let artworkString = artworkDict["url"] as? String  {
