@@ -20,7 +20,8 @@ class DetailViewController: UIViewController {
 
   
     var game : Game?
-    var realm: Realm!
+//    var realm: Realm!
+//    var results: Results<GameToSave>?
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
  
@@ -32,7 +33,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setViews()
-        realm = try! Realm()
+//        realm = try! Realm()
     }
     
     // MARK: - Custom Methods
@@ -60,22 +61,45 @@ class DetailViewController: UIViewController {
     
     @IBAction func havePlayedPushed(_ sender: Any) {
         guard let game = game else { fatalError() }
-        let gameToSave = GameToSave(withGame: game)
-        gameToSave.havePlayed = true
-        try! realm.write {
-            realm.add(gameToSave)
+        DataManager.addGame(game) { (success, error) in
+            if let error = error {
+                self.presentAlertWithMessage(error)
+            }
         }
     }
     
     @IBAction func wantToPlayPushed(_ sender: Any) {
-        guard let game = game else { fatalError() }
-        let gameToSave = GameToSave(withGame: game)
-        gameToSave.wantToPlay = true
-        try! realm.write {
-            realm.add(gameToSave)
-        }
+//        guard let game = game else { fatalError() }
+//
+//        if let results = results {
+//            for result in results {
+//                if game.name == result.name {
+//
+//                    let message: String!
+//                    let controller: UIAlertController!
+//                    let okay = UIAlertAction(title: "OK", style: .default, handler: nil)
+//
+//                    if result.wantToPlay {
+//                        message = "You have already selected this game"
+//                    } else {
+//                        message = "You have selected this as a game you have played. Selection impossible!"
+//                    }
+//
+//                    controller = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+//                    controller.addAction(okay)
+//                    present(controller, animated: true, completion: nil)
+//                    return
+//                }
+//            }
+//        }
+//
+//        let gameToSave = GameToSave(withGame: game)
+//        gameToSave.wantToPlay = true
+//        try! realm.write {
+//            realm.add(gameToSave)
+//        }
     }
-    
+
     
 }
 
@@ -93,6 +117,15 @@ extension DetailViewController: UICollectionViewDataSource {
            cell.imageView.image = screenshots[indexPath.row]
         }
         return cell
+    }
+}
+
+extension UIViewController {
+    func presentAlertWithMessage(_ error: NSError) {
+        let message = error.userInfo["message"] as? String ?? "No error message"
+        let controller = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        controller.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+        self.present(controller, animated: true, completion: nil)
     }
 }
 
