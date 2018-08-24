@@ -10,12 +10,10 @@
 		46441CAF212DD87300295D61 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46441CAE212DD87300295D61 /* DetailViewController.swift */; };
 		46441CB2212DE6C900295D61 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46441CB1212DE6C900295D61 /* DetailCollectionViewCell.swift */; };
 		46441CB5212E1DE600295D61 /* Bangers-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46441CB4212E1DDD00295D61 /* Bangers-Regular.ttf */; };
-		8F8EA257CF7EB78BCE569849 /* Pods_GameLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B692EA84A7BEC3A98EB791 /* Pods_GameLogger.framework */; };
 		BA092484212F47AB0069156A /* GameListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA092483212F47AB0069156A /* GameListCell.swift */; };
 		BA1944CC212E00BB000804C7 /* PopularGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1944CB212E00BB000804C7 /* PopularGameCell.swift */; };
 		BA1944CE212E1B38000804C7 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1944CD212E1B38000804C7 /* SearchResultsViewController.swift */; };
 		BA1944D0212E1B4F000804C7 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1944CF212E1B4F000804C7 /* ResultCell.swift */; };
-		BA3941CE213079D3008D6F7D /* GameToSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3941CD213079D3008D6F7D /* GameToSave.swift */; };
 		BA3941D0213079F4008D6F7D /* SavedGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3941CF213079F4008D6F7D /* SavedGamesViewController.swift */; };
 		BA3941D221308084008D6F7D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3941D121308084008D6F7D /* DataManager.swift */; };
 		BA5100EB212DAB7200A14C5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5100EA212DAB7200A14C5F /* AppDelegate.swift */; };
@@ -28,17 +26,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		32B692EA84A7BEC3A98EB791 /* Pods_GameLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46441CAE212DD87300295D61 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		46441CB0212DDB6900295D61 /* GameLogger-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GameLogger-Bridging-Header.h"; sourceTree = "<group>"; };
 		46441CB1212DE6C900295D61 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailCollectionViewCell.swift; path = GameLogger/Views/DetailCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		46441CB4212E1DDD00295D61 /* Bangers-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bangers-Regular.ttf"; sourceTree = "<group>"; };
-		B43189769ABF0B0A892BEA4E /* Pods-GameLogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameLogger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GameLogger/Pods-GameLogger.debug.xcconfig"; sourceTree = "<group>"; };
 		BA092483212F47AB0069156A /* GameListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListCell.swift; sourceTree = "<group>"; };
 		BA1944CB212E00BB000804C7 /* PopularGameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularGameCell.swift; sourceTree = "<group>"; };
 		BA1944CD212E1B38000804C7 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		BA1944CF212E1B4F000804C7 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
-		BA3941CD213079D3008D6F7D /* GameToSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameToSave.swift; sourceTree = "<group>"; };
 		BA3941CF213079F4008D6F7D /* SavedGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedGamesViewController.swift; sourceTree = "<group>"; };
 		BA3941D121308084008D6F7D /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		BA5100E7212DAB7200A14C5F /* GameLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,7 +45,6 @@
 		BA5100F6212DAB7300A14C5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA5100FE212DAF4400A14C5F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BA510104212DB08A00A14C5F /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		C27A6A4B0096A3EA6D4DB68F /* Pods-GameLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameLogger.release.xcconfig"; path = "Pods/Target Support Files/Pods-GameLogger/Pods-GameLogger.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +52,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F8EA257CF7EB78BCE569849 /* Pods_GameLogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,31 +66,12 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		5847488AEF2237A654E275E7 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				32B692EA84A7BEC3A98EB791 /* Pods_GameLogger.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A53774318E01360C4740FD95 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				B43189769ABF0B0A892BEA4E /* Pods-GameLogger.debug.xcconfig */,
-				C27A6A4B0096A3EA6D4DB68F /* Pods-GameLogger.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		BA5100DE212DAB7200A14C5F = {
 			isa = PBXGroup;
 			children = (
 				BA5100E9212DAB7200A14C5F /* GameLogger */,
 				BA5100E8212DAB7200A14C5F /* Products */,
 				46441CB0212DDB6900295D61 /* GameLogger-Bridging-Header.h */,
-				A53774318E01360C4740FD95 /* Pods */,
-				5847488AEF2237A654E275E7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,7 +111,6 @@
 			children = (
 				BA5100FE212DAF4400A14C5F /* NetworkManager.swift */,
 				BA510104212DB08A00A14C5F /* Game.swift */,
-				BA3941CD213079D3008D6F7D /* GameToSave.swift */,
 				BA3941D121308084008D6F7D /* DataManager.swift */,
 			);
 			path = Models;
@@ -173,11 +146,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA5100F9212DAB7300A14C5F /* Build configuration list for PBXNativeTarget "GameLogger" */;
 			buildPhases = (
-				F85AC0226661093D1B4B4424 /* [CP] Check Pods Manifest.lock */,
 				BA5100E3212DAB7200A14C5F /* Sources */,
 				BA5100E4212DAB7200A14C5F /* Frameworks */,
 				BA5100E5212DAB7200A14C5F /* Resources */,
-				B2569AC26BD61AAF8641B75F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -236,54 +207,12 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		B2569AC26BD61AAF8641B75F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-GameLogger/Pods-GameLogger-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GameLogger/Pods-GameLogger-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F85AC0226661093D1B4B4424 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GameLogger-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		BA5100E3212DAB7200A14C5F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BA3941D0213079F4008D6F7D /* SavedGamesViewController.swift in Sources */,
-				BA3941CE213079D3008D6F7D /* GameToSave.swift in Sources */,
 				BA5100FF212DAF4400A14C5F /* NetworkManager.swift in Sources */,
 				BA1944CE212E1B38000804C7 /* SearchResultsViewController.swift in Sources */,
 				BA5100ED212DAB7200A14C5F /* HomeViewController.swift in Sources */,
@@ -436,7 +365,6 @@
 		};
 		BA5100FA212DAB7300A14C5F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B43189769ABF0B0A892BEA4E /* Pods-GameLogger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -458,7 +386,6 @@
 		};
 		BA5100FB212DAB7300A14C5F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C27A6A4B0096A3EA6D4DB68F /* Pods-GameLogger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

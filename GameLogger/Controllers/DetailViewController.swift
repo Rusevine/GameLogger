@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 class DetailViewController: UIViewController {
     
@@ -20,8 +19,7 @@ class DetailViewController: UIViewController {
 
   
     var game : Game?
-//    var realm: Realm!
-//    var results: Results<GameToSave>?
+    private let manager =  DataManager()
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
  
@@ -33,7 +31,6 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setViews()
-//        realm = try! Realm()
     }
     
     // MARK: - Custom Methods
@@ -61,43 +58,12 @@ class DetailViewController: UIViewController {
     
     @IBAction func havePlayedPushed(_ sender: Any) {
         guard let game = game else { fatalError() }
-        DataManager.addGame(game) { (success, error) in
-            if let error = error {
-                self.presentAlertWithMessage(error)
-            }
-        }
+        manager.addGame(game, status: .havePlayed)
     }
     
     @IBAction func wantToPlayPushed(_ sender: Any) {
-//        guard let game = game else { fatalError() }
-//
-//        if let results = results {
-//            for result in results {
-//                if game.name == result.name {
-//
-//                    let message: String!
-//                    let controller: UIAlertController!
-//                    let okay = UIAlertAction(title: "OK", style: .default, handler: nil)
-//
-//                    if result.wantToPlay {
-//                        message = "You have already selected this game"
-//                    } else {
-//                        message = "You have selected this as a game you have played. Selection impossible!"
-//                    }
-//
-//                    controller = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-//                    controller.addAction(okay)
-//                    present(controller, animated: true, completion: nil)
-//                    return
-//                }
-//            }
-//        }
-//
-//        let gameToSave = GameToSave(withGame: game)
-//        gameToSave.wantToPlay = true
-//        try! realm.write {
-//            realm.add(gameToSave)
-//        }
+        guard let game = game else { fatalError() }
+        manager.addGame(game, status: .wantToPlay)
     }
 
     
