@@ -10,14 +10,14 @@
 		46441CAF212DD87300295D61 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46441CAE212DD87300295D61 /* DetailViewController.swift */; };
 		46441CB2212DE6C900295D61 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46441CB1212DE6C900295D61 /* DetailCollectionViewCell.swift */; };
 		46441CB5212E1DE600295D61 /* Bangers-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46441CB4212E1DDD00295D61 /* Bangers-Regular.ttf */; };
-		46441CB7212E1F8400295D61 /* GamesHavePlayedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46441CB6212E1F8400295D61 /* GamesHavePlayedViewController.swift */; };
 		8F8EA257CF7EB78BCE569849 /* Pods_GameLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B692EA84A7BEC3A98EB791 /* Pods_GameLogger.framework */; };
-		BA092482212F26AC0069156A /* HavePlayedGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA092481212F26AC0069156A /* HavePlayedGame.swift */; };
 		BA092484212F47AB0069156A /* GameListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA092483212F47AB0069156A /* GameListCell.swift */; };
 		BA092488212F4BB50069156A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA092487212F4BB50069156A /* DataManager.swift */; };
 		BA1944CC212E00BB000804C7 /* PopularGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1944CB212E00BB000804C7 /* PopularGameCell.swift */; };
 		BA1944CE212E1B38000804C7 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1944CD212E1B38000804C7 /* SearchResultsViewController.swift */; };
 		BA1944D0212E1B4F000804C7 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1944CF212E1B4F000804C7 /* ResultCell.swift */; };
+		BA3941CE213079D3008D6F7D /* GameToSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3941CD213079D3008D6F7D /* GameToSave.swift */; };
+		BA3941D0213079F4008D6F7D /* SavedGamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3941CF213079F4008D6F7D /* SavedGamesViewController.swift */; };
 		BA5100EB212DAB7200A14C5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5100EA212DAB7200A14C5F /* AppDelegate.swift */; };
 		BA5100ED212DAB7200A14C5F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5100EC212DAB7200A14C5F /* HomeViewController.swift */; };
 		BA5100F0212DAB7200A14C5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA5100EE212DAB7200A14C5F /* Main.storyboard */; };
@@ -33,14 +33,14 @@
 		46441CB0212DDB6900295D61 /* GameLogger-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GameLogger-Bridging-Header.h"; sourceTree = "<group>"; };
 		46441CB1212DE6C900295D61 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailCollectionViewCell.swift; path = GameLogger/Views/DetailCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		46441CB4212E1DDD00295D61 /* Bangers-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bangers-Regular.ttf"; sourceTree = "<group>"; };
-		46441CB6212E1F8400295D61 /* GamesHavePlayedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesHavePlayedViewController.swift; sourceTree = "<group>"; };
 		B43189769ABF0B0A892BEA4E /* Pods-GameLogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameLogger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GameLogger/Pods-GameLogger.debug.xcconfig"; sourceTree = "<group>"; };
-		BA092481212F26AC0069156A /* HavePlayedGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HavePlayedGame.swift; sourceTree = "<group>"; };
 		BA092483212F47AB0069156A /* GameListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListCell.swift; sourceTree = "<group>"; };
 		BA092487212F4BB50069156A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		BA1944CB212E00BB000804C7 /* PopularGameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularGameCell.swift; sourceTree = "<group>"; };
 		BA1944CD212E1B38000804C7 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		BA1944CF212E1B4F000804C7 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
+		BA3941CD213079D3008D6F7D /* GameToSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameToSave.swift; sourceTree = "<group>"; };
+		BA3941CF213079F4008D6F7D /* SavedGamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedGamesViewController.swift; sourceTree = "<group>"; };
 		BA5100E7212DAB7200A14C5F /* GameLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA5100EA212DAB7200A14C5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA5100EC212DAB7200A14C5F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -125,8 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				BA5100EC212DAB7200A14C5F /* HomeViewController.swift */,
+				BA3941CF213079F4008D6F7D /* SavedGamesViewController.swift */,
 				46441CAE212DD87300295D61 /* DetailViewController.swift */,
-				46441CB6212E1F8400295D61 /* GamesHavePlayedViewController.swift */,
 				BA1944CD212E1B38000804C7 /* SearchResultsViewController.swift */,
 			);
 			path = Controllers;
@@ -137,7 +137,7 @@
 			children = (
 				BA5100FE212DAF4400A14C5F /* NetworkManager.swift */,
 				BA510104212DB08A00A14C5F /* Game.swift */,
-				BA092481212F26AC0069156A /* HavePlayedGame.swift */,
+				BA3941CD213079D3008D6F7D /* GameToSave.swift */,
 				BA092487212F4BB50069156A /* DataManager.swift */,
 			);
 			path = Models;
@@ -282,13 +282,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA3941D0213079F4008D6F7D /* SavedGamesViewController.swift in Sources */,
+				BA3941CE213079D3008D6F7D /* GameToSave.swift in Sources */,
 				BA5100FF212DAF4400A14C5F /* NetworkManager.swift in Sources */,
-				BA092482212F26AC0069156A /* HavePlayedGame.swift in Sources */,
 				BA1944CE212E1B38000804C7 /* SearchResultsViewController.swift in Sources */,
 				BA5100ED212DAB7200A14C5F /* HomeViewController.swift in Sources */,
 				46441CAF212DD87300295D61 /* DetailViewController.swift in Sources */,
 				BA1944CC212E00BB000804C7 /* PopularGameCell.swift in Sources */,
-				46441CB7212E1F8400295D61 /* GamesHavePlayedViewController.swift in Sources */,
 				BA1944D0212E1B4F000804C7 /* ResultCell.swift in Sources */,
 				BA5100EB212DAB7200A14C5F /* AppDelegate.swift in Sources */,
 				BA510105212DB08A00A14C5F /* Game.swift in Sources */,

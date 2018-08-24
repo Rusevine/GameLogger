@@ -43,10 +43,6 @@ class DetailViewController: UIViewController {
         if let game = game {
             gameNameLabel.text = game.name
             gameNameLabel.adjustsFontSizeToFitWidth = true
-            let roundedRating = game.gameRating?.rounded()
-            ratingLabel.text = "Rating: \(String(describing: roundedRating!))"
-            descriptionLabel.text = "Description: \(String(describing: game.summary!))"
-            
         }
         getGameScreenshots()
     }
@@ -64,12 +60,23 @@ class DetailViewController: UIViewController {
     
     @IBAction func havePlayedPushed(_ sender: Any) {
         guard let game = game else { fatalError() }
-        let gameToSave = HavePlayedGame(withGame: game)
+        let gameToSave = GameToSave(withGame: game)
+        gameToSave.havePlayed = true
         try! realm.write {
             realm.add(gameToSave)
         }
-        
     }
+    
+    @IBAction func wantToPlayPushed(_ sender: Any) {
+        guard let game = game else { fatalError() }
+        let gameToSave = GameToSave(withGame: game)
+        gameToSave.wantToPlay = true
+        try! realm.write {
+            realm.add(gameToSave)
+        }
+    }
+    
+    
 }
 
 // MARK: - Collection View Data Source

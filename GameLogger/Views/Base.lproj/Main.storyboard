@@ -342,6 +342,9 @@
                                 <state key="normal" title="Want to Play">
                                     <color key="titleColor" red="0.45098039215686275" green="0.25098039215686274" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="wantToPlayPushed:" destination="GMp-m0-L0S" eventType="touchUpInside" id="5FJ-zf-07d"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.97116655529999996" blue="0.95448619170000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -396,7 +399,7 @@
         <!--Games To Play-->
         <scene sceneID="DgM-8p-OBv">
             <objects>
-                <viewController id="ogi-vF-yId" customClass="GamesHavePlayedViewController" customModule="GameLogger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ogi-vF-yId" customClass="SavedGamesViewController" customModule="GameLogger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kam-Ka-Ybo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -455,7 +458,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Games To Play" id="ibp-Tc-e89"/>
                     <connections>
-                        <outlet property="tableView" destination="o3i-95-AdR" id="0dR-Rm-cok"/>
+                        <outlet property="tableView" destination="o3i-95-AdR" id="Acy-1L-hcA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GOG-FW-owy" userLabel="First Responder" sceneMemberID="firstResponder"/>

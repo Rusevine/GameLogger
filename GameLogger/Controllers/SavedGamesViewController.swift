@@ -28,6 +28,7 @@ class SavedGamesViewController: UIViewController {
             self.havePlayed.removeAll()
             self.wantToPlay.removeAll()
             for result in results {
+                print(result.name)
                 if result.havePlayed == true {
                     self.havePlayed.append(result)
                 } else if result.wantToPlay == true {
