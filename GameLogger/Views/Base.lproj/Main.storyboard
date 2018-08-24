@@ -26,30 +26,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Minimalistic-Emo" translatesAutoresizingMaskIntoConstraints="NO" id="VXM-8F-R1z">
+                                <rect key="frame" x="0.0" y="-11" width="375" height="667"/>
+                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qsc-ch-oMR">
-                                <rect key="frame" x="16" y="151" width="343" height="30"/>
+                                <rect key="frame" x="62" y="197" width="251" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cF-Qg-FBX">
-                                <rect key="frame" x="163" y="203" width="48" height="30"/>
-                                <state key="normal" title="Search"/>
+                                <rect key="frame" x="132" y="249" width="111" height="45"/>
+                                <color key="backgroundColor" red="0.68235294117647061" green="0.6588235294117647" blue="0.68627450980392157" alpha="0.58486729452054798" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Bangers-Regular" family="Bangers" pointSize="31"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" red="0.72076201438903809" green="0.18619457251889363" blue="0.28633961079116155" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0RD-jF-m0C"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBj-c7-TcV">
-                                <rect key="frame" x="45" y="459" width="286" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="0.0" y="542" width="375" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="nF5-3M-Hup"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Bangers-Regular" family="Bangers" pointSize="27"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.68754897500000001" green="0.04405496607" blue="0.12502656579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="popularGameButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hxm-Wz-c84"/>
                                     <segue destination="GMp-m0-L0S" kind="show" identifier="PopularButtonPushed" id="Jqp-Ef-YGL"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="26R-Ba-Zh6">
-                                <rect key="frame" x="0.0" y="318" width="375" height="95"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="412" width="375" height="101"/>
+                                <color key="backgroundColor" red="0.68235294117647061" green="0.6588235294117647" blue="0.68627450980392157" alpha="0.5781785102739726" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wnQ-6O-SCH">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -58,7 +71,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PopularGameCell" id="lEI-y1-0MG" customClass="PopularGameCell" customModule="GameLogger" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="22.5" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="25.5" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -85,31 +98,48 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Nqx-zn-hog"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popular Right Now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lre-BO-WbI">
-                                <rect key="frame" x="117" y="270" width="142" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popular Games Today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lre-BO-WbI">
+                                <rect key="frame" x="0.0" y="380" width="375" height="32"/>
+                                <color key="backgroundColor" red="0.68235294117647061" green="0.6588235294117647" blue="0.68627450980392157" alpha="0.5814854452054794" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Bangers-Regular" family="Bangers" pointSize="30"/>
+                                <color key="textColor" red="0.68754897504893653" green="0.044054966070755021" blue="0.12502656575014898" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="APP NAME!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUP-We-Tff">
+                                <rect key="frame" x="85" y="99" width="205" height="55"/>
+                                <fontDescription key="fontDescription" name="Bangers-Regular" family="Bangers" pointSize="51"/>
+                                <color key="textColor" red="0.68754897500000001" green="0.04405496607" blue="0.12502656579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="RBj-c7-TcV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="9Bf-B1-fmD"/>
-                            <constraint firstItem="Qsc-ch-oMR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Com-Iy-90Y"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1cF-Qg-FBX" secondAttribute="trailing" constant="164" id="IPe-Ox-F0B"/>
-                            <constraint firstItem="RBj-c7-TcV" firstAttribute="top" secondItem="26R-Ba-Zh6" secondAttribute="bottom" constant="46" id="KHP-vZ-sM1"/>
+                            <constraint firstItem="Qsc-ch-oMR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="133" id="2NQ-pN-yZ0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iUP-We-Tff" secondAttribute="trailing" constant="85" id="67E-5W-hGF"/>
+                            <constraint firstItem="iUP-We-Tff" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="85" id="7m3-Wg-Uvj"/>
+                            <constraint firstItem="VXM-8F-R1z" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="BqI-lb-acz"/>
+                            <constraint firstItem="VXM-8F-R1z" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="DfZ-Lf-DWw"/>
+                            <constraint firstItem="RBj-c7-TcV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GyN-aG-gXt"/>
+                            <constraint firstItem="Qsc-ch-oMR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="62" id="IST-om-NKa"/>
+                            <constraint firstItem="iUP-We-Tff" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="L8z-nE-bJV"/>
                             <constraint firstItem="26R-Ba-Zh6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LGd-Np-Aiz"/>
-                            <constraint firstItem="1cF-Qg-FBX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="163" id="LS8-Qt-SNW"/>
-                            <constraint firstItem="26R-Ba-Zh6" firstAttribute="top" secondItem="lre-BO-WbI" secondAttribute="bottom" constant="27" id="M2D-NJ-oUn"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RBj-c7-TcV" secondAttribute="bottom" constant="129" id="MAa-f7-wh9"/>
                             <constraint firstItem="26R-Ba-Zh6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="MN6-Bh-Jur"/>
-                            <constraint firstItem="1cF-Qg-FBX" firstAttribute="top" secondItem="Qsc-ch-oMR" secondAttribute="bottom" constant="22" id="OGa-l8-e6A"/>
-                            <constraint firstItem="lre-BO-WbI" firstAttribute="top" secondItem="1cF-Qg-FBX" secondAttribute="bottom" constant="37" id="PNP-8i-43Q"/>
-                            <constraint firstItem="lre-BO-WbI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="117" id="bR4-KQ-rQ9"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lre-BO-WbI" secondAttribute="trailing" constant="116" id="jdF-b0-XFA"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RBj-c7-TcV" secondAttribute="trailing" constant="44" id="pbA-5z-YUM"/>
-                            <constraint firstItem="Qsc-ch-oMR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="87" id="tIp-GK-yyH"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qsc-ch-oMR" secondAttribute="trailing" constant="16" id="vei-Ts-S93"/>
+                            <constraint firstItem="lre-BO-WbI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="N9c-yq-v5G"/>
+                            <constraint firstItem="1cF-Qg-FBX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="132" id="QPs-E0-Bqv"/>
+                            <constraint firstItem="RBj-c7-TcV" firstAttribute="top" secondItem="26R-Ba-Zh6" secondAttribute="bottom" constant="29" id="S5L-3e-Zzh"/>
+                            <constraint firstItem="1cF-Qg-FBX" firstAttribute="top" secondItem="Qsc-ch-oMR" secondAttribute="bottom" constant="22" id="SA5-nn-dzL"/>
+                            <constraint firstItem="lre-BO-WbI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="UGb-Fy-OgM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1cF-Qg-FBX" secondAttribute="trailing" constant="132" id="Uc2-rF-qAA"/>
+                            <constraint firstItem="VXM-8F-R1z" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="XUo-3I-fE7"/>
+                            <constraint firstItem="26R-Ba-Zh6" firstAttribute="top" secondItem="lre-BO-WbI" secondAttribute="bottom" id="cAC-sn-ReW"/>
+                            <constraint firstItem="lre-BO-WbI" firstAttribute="top" secondItem="1cF-Qg-FBX" secondAttribute="bottom" constant="86" id="cNw-Aa-4tE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qsc-ch-oMR" secondAttribute="trailing" constant="62" id="daz-cQ-cpV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RBj-c7-TcV" secondAttribute="bottom" constant="35" id="eIQ-Rh-wT3"/>
+                            <constraint firstItem="RBj-c7-TcV" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jAS-J5-Jf5"/>
+                            <constraint firstItem="26R-Ba-Zh6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oYA-0w-oso"/>
+                            <constraint firstItem="26R-Ba-Zh6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="vXy-AT-St2"/>
+                            <constraint firstItem="Qsc-ch-oMR" firstAttribute="top" secondItem="iUP-We-Tff" secondAttribute="bottom" constant="43" id="wgd-Vm-XKE"/>
+                            <constraint firstItem="VXM-8F-R1z" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-18.5" id="zsL-fu-5zE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -398,9 +428,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pjl-mf-rSZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3756" y="133.5832083958021"/>
+            <point key="canvasLocation" x="2404" y="948"/>
         </scene>
-        <!--Games To Play-->
+        <!--Game List-->
         <scene sceneID="DgM-8p-OBv">
             <objects>
                 <viewController id="ogi-vF-yId" customClass="SavedGamesViewController" customModule="GameLogger" customModuleProvider="target" sceneMemberID="viewController">
@@ -460,7 +490,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IQZ-wc-qjj"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Games To Play" id="ibp-Tc-e89"/>
+                    <tabBarItem key="tabBarItem" title="Game List" selectedImage="home" id="ibp-Tc-e89"/>
                     <connections>
                         <outlet property="tableView" destination="o3i-95-AdR" id="Acy-1L-hcA"/>
                     </connections>
@@ -509,6 +539,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="eUs-iD-vkz">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4zF-q1-bRb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="WQh-aX-nir" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LtW-g2-NHu">
@@ -521,7 +552,6 @@
                         <segue destination="ogi-vF-yId" kind="relationship" relationship="viewControllers" id="AKW-RK-cDB"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4zF-q1-bRb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
@@ -529,7 +559,7 @@
         <scene sceneID="Ged-Mq-lmJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4ej-r2-90R" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" id="ZvF-Wd-hTA"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="search" id="ZvF-Wd-hTA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="A4N-b4-5y4">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -546,8 +576,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Minimalistic-Emo" width="744" height="1392"/>
         <image name="Z1" width="600" height="320"/>
         <image name="galaxy" width="750" height="1334"/>
+        <image name="home" width="30" height="30"/>
+        <image name="search" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Jqp-Ef-YGL"/>
