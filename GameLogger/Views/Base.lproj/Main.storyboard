@@ -18,7 +18,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Home View Controller-->
+        <!--App Name!-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="GameLogger" customModuleProvider="target" sceneMemberID="viewController">
@@ -143,7 +143,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="O0g-Mb-GNA"/>
+                    <navigationItem key="navigationItem" title="App Name!" id="O0g-Mb-GNA"/>
                     <connections>
                         <outlet property="collectionView" destination="26R-Ba-Zh6" id="YeQ-p2-L9L"/>
                         <outlet property="popularGameButton" destination="RBj-c7-TcV" id="PQ2-g9-Mcl"/>
@@ -163,9 +163,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Minimalistic-Emo" translatesAutoresizingMaskIntoConstraints="NO" id="Asy-fp-i9l">
+                                <rect key="frame" x="-0.5" y="7.5" width="375" height="667"/>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aC3-4K-emT">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.10207084760273973" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" rowHeight="97" id="2a6-3J-JF4" customClass="ResultCell" customModule="GameLogger" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="97"/>
@@ -178,12 +182,13 @@
                                                     <rect key="frame" x="15" y="11" width="78" height="78"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6si-Vp-FYv">
-                                                    <rect key="frame" x="107" y="40" width="253" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="107" y="40" width="253" height="33"/>
+                                                    <fontDescription key="fontDescription" name="Bangers-Regular" family="Bangers" pointSize="31"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.1952322345890411" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="blT-46-e6w" firstAttribute="height" secondItem="nFD-EY-b4S" secondAttribute="height" multiplier="0.8" id="2Bh-0q-Wb7"/>
                                                 <constraint firstAttribute="trailing" secondItem="6si-Vp-FYv" secondAttribute="trailing" constant="15" id="4sK-UL-LGK"/>
@@ -194,6 +199,7 @@
                                                 <constraint firstItem="blT-46-e6w" firstAttribute="leading" secondItem="nFD-EY-b4S" secondAttribute="leading" constant="15" id="rYT-Lv-hoq"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.34880672089041098" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="gameImageView" destination="blT-46-e6w" id="hGQ-Df-Prw"/>
                                             <outlet property="gameLabel" destination="6si-Vp-FYv" id="15P-vR-2E8"/>
@@ -210,8 +216,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="aC3-4K-emT" firstAttribute="leading" secondItem="vPx-fe-1Tz" secondAttribute="leading" id="CQj-nr-2nA"/>
+                            <constraint firstItem="Asy-fp-i9l" firstAttribute="width" secondItem="blh-zn-Yxj" secondAttribute="width" id="Iv0-2a-2NX"/>
                             <constraint firstItem="aC3-4K-emT" firstAttribute="trailing" secondItem="vPx-fe-1Tz" secondAttribute="trailing" id="JSO-xg-7C7"/>
                             <constraint firstItem="aC3-4K-emT" firstAttribute="top" secondItem="vPx-fe-1Tz" secondAttribute="top" id="U4M-Kk-2EC"/>
+                            <constraint firstItem="Asy-fp-i9l" firstAttribute="height" secondItem="blh-zn-Yxj" secondAttribute="height" id="Vzx-VW-2Ju"/>
+                            <constraint firstItem="Asy-fp-i9l" firstAttribute="centerY" secondItem="vPx-fe-1Tz" secondAttribute="centerY" id="llF-Mh-Cqp"/>
+                            <constraint firstItem="Asy-fp-i9l" firstAttribute="centerX" secondItem="vPx-fe-1Tz" secondAttribute="centerX" id="qBw-MC-Zdh"/>
                             <constraint firstItem="aC3-4K-emT" firstAttribute="bottom" secondItem="vPx-fe-1Tz" secondAttribute="bottom" id="qP0-yf-DQm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vPx-fe-1Tz"/>
@@ -583,6 +593,6 @@
         <image name="search" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Jqp-Ef-YGL"/>
+        <segue reference="N8n-dB-9j6"/>
     </inferredMetricsTieBreakers>
 </document>
