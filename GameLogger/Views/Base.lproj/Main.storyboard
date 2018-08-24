@@ -42,6 +42,10 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBj-c7-TcV">
                                 <rect key="frame" x="45" y="459" width="286" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="popularGameButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hxm-Wz-c84"/>
+                                    <segue destination="GMp-m0-L0S" kind="show" identifier="PopularButtonPushed" id="Jqp-Ef-YGL"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="26R-Ba-Zh6">
                                 <rect key="frame" x="0.0" y="318" width="375" height="95"/>
@@ -545,4 +549,7 @@
         <image name="Z1" width="600" height="320"/>
         <image name="galaxy" width="750" height="1334"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Jqp-Ef-YGL"/>
+    </inferredMetricsTieBreakers>
 </document>

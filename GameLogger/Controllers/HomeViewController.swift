@@ -12,6 +12,8 @@ class HomeViewController: UIViewController {
     
     // MARK: - IBOutlets & IBActions
 
+    @IBAction func popularGameButtonPressed(_ sender: Any) {
+    }
     @IBAction func searchButtonPressed(_ sender: Any) {
         if searchField.text!.isEmpty {
             let ac = UIAlertController(title: "Error", message: "Please Input A Search Term.", preferredStyle: .alert)
@@ -38,7 +40,7 @@ class HomeViewController: UIViewController {
     
     var searchGames = [Game]()
     var popularGames = [Game]()
-    
+    var popularIndexPath: IndexPath?
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -64,6 +66,10 @@ class HomeViewController: UIViewController {
         if segue.identifier == "SearchSegue" {
             let vc = segue.destination as! SearchResultsViewController
             vc.games = searchGames
+        } else if segue.identifier == "PopularButtonPushed" {
+            let vc = segue.destination as! DetailViewController
+            guard let indexPath = popularIndexPath else { return }
+            vc.game = popularGames[indexPath.row]
         }
     }
 
@@ -98,6 +104,7 @@ extension HomeViewController: UICollectionViewDelegate {
         popularGameButton.alpha = 0
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        popularIndexPath = indexPath
         popularGameButton.setTitle(popularGames[indexPath.row].name!, for: .normal)
         UIView.animate(withDuration: 0.5) {
             self.popularGameButton.alpha = 1

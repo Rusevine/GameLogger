@@ -67,15 +67,20 @@ extension SavedGamesViewController: UITableViewDataSource {
         let currentSection = indexPath.section
         let currentRow = indexPath.row
         
+        var imageData = Data()
+        
         switch currentSection {
         case 0:
             cell.title.text = havePlayed[currentRow].name
+            imageData = havePlayed[currentRow].imageData
         case 1:
             cell.title.text = wantToPlay[currentRow].name
+            imageData = havePlayed[currentRow].imageData
         default:
             cell.title.text = "No Game!"
-            cell.artwork.image = #imageLiteral(resourceName: "noimage")
         }
+        
+        cell.artwork.image = DataManager.getImageFromData(imageData)
         
         return cell
     }
