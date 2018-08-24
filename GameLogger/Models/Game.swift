@@ -15,14 +15,14 @@ import UIKit
     var artwork: UIImage?
     var screenshots: [UIImage]?
     var screenshotsURLs: [URL]?
-    var gameId: Int?
+    let gameId: Int
     var gameRating: Double?
     var summary: String?
     private var artworkURL: URL?
-  
     
-    init(withDictionary dictionary: [String:Any]) {
-      
+    
+    init?(withDictionary dictionary: [String:Any]) {
+        
         if let name = dictionary["name"] as? String {
             self.name = name
         }
@@ -30,22 +30,25 @@ import UIKit
         if let releaseDate = dictionary["first_release_date"] as? Int {
             self.releaseDate = releaseDate
         }
-      
-        if let gameId = dictionary["id"] as? Int {
-          self.gameId = gameId
+        
+        guard let gameId = dictionary["id"] as? Int else {
+            return nil
         }
+        
+        self.gameId = gameId
+        
         if let summary = dictionary["summary"] as? String {
-          self.summary = summary
+            self.summary = summary
         }
-      
+        
         if let gameRating = dictionary["rating"] as? Double {
-          self.gameRating = gameRating
+            self.gameRating = gameRating
         }
         
         if let artworkDict = dictionary["cover"] as? [String: Any], let artworkString = artworkDict["url"] as? String  {
             self.artworkURL = URL(string: artworkString)
         }
-      
+        
         if let screenshotsArr : [[String:Any]] = dictionary["screenshots"] as? [[String: Any]] {
             var tempScreenshotURLs = [URL]()
             screenshots = []
@@ -64,7 +67,7 @@ import UIKit
     func getArtwork(onLoad: @escaping ((UIImage) -> Void)) {
         
         if let artwork = artwork {
-          onLoad(artwork)
+            onLoad(artwork)
         } else {
             guard let artworkURL = artworkURL else {
                 artwork = #imageLiteral(resourceName: "noimage")

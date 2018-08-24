@@ -52,7 +52,7 @@ class NetworkManager: NSObject {
             }
             
             for dict in mainArray {
-                let newGame = Game(withDictionary: dict)
+                guard let newGame = Game(withDictionary: dict) else { continue }
                 games.append(newGame)
             }
             
