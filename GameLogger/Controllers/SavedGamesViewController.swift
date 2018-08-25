@@ -12,18 +12,20 @@ class SavedGamesViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     let manager = DataManager()
-    var havePlayedGames: [Game]?
-    var wantToPlayGames: [Game]?
+    var havePlayedGames = [Game]()
+    var wantToPlayGames =  [Game]()
     
     override func viewWillAppear(_ animated: Bool) {
         manager.fetchGamesWithStatus(.havePlayed) { (returnedGames) in
-            self.havePlayedGames = returnedGames?.sorted(by: { $0.gameId > $1.gameId })
+            guard let returnedGames = returnedGames else { return }
+            self.havePlayedGames = returnedGames.sorted(by: { $0.gameId > $1.gameId })
             OperationQueue.main.addOperation {
                 self.tableView.reloadData()
             }
         }
         manager.fetchGamesWithStatus(.wantToPlay) { (returnedGames) in
-            self.wantToPlayGames = returnedGames?.sorted(by: { $0.gameId > $1.gameId })
+            guard let returnedGames = returnedGames else { return }
+            self.wantToPlayGames = returnedGames.sorted(by: { $0.gameId > $1.gameId })
             OperationQueue.main.addOperation {
                 self.tableView.reloadData()
             }
@@ -37,7 +39,6 @@ class SavedGamesViewController: UIViewController {
 
 extension SavedGamesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let havePlayedGames = havePlayedGames, let wantToPlayGames = wantToPlayGames else { return 0}
         switch section {
         case 0: return havePlayedGames.count
         case 1: return wantToPlayGames.count
@@ -47,8 +48,8 @@ extension SavedGamesViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         var count = 0
-        if havePlayedGames != nil { count += 1}
-        if wantToPlayGames != nil { count += 1 }
+        if havePlayedGames.count > 0 { count += 1}
+        if wantToPlayGames.count > 0 { count += 1 }
         return count
     }
     
@@ -56,9 +57,9 @@ extension SavedGamesViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GameListCell") as! GameListCell
         switch indexPath.section {
         case 0:
-            cell.title.text = havePlayedGames![indexPath.row].name
+            cell.title.text = havePlayedGames[indexPath.row].name
         case 1:
-            cell.title.text = wantToPlayGames![indexPath.row].name
+            cell.title.text = wantToPlayGames[indexPath.row].name
         default:
             cell.title.text = "No name"
         }
