@@ -14,12 +14,7 @@ class DataManager: NSObject {
         case wantToPlay = "wantToPlay"
         case havePlayed = "havePlayed"
     }
-    
-//    struct DefaultKey {
-//        static let wantToPlay = "wantToPlay"
-//        static let havePlayed = "havePlayed"
-//    }
-//
+
     private let userDefaults = UserDefaults.standard
 
     class func getImageFromData(_ data: Data) -> UIImage {
@@ -34,10 +29,31 @@ class DataManager: NSObject {
         case .wantToPlay:
             addGameToWantToPlay(game)
         }
-        
     }
     
-    // MARK: - Fetching From UserDefaults
+    func fetchGamesWithStatus(_ status: GameStatus, completion: @escaping ([Game]?) -> ()) {
+        switch status {
+        case .havePlayed:
+            let havePlayedIds = havePlayed()
+            NetworkManager.getGameFromIds(havePlayedIds) { (returnedGames) in
+                completion(returnedGames)
+            }
+        case .wantToPlay:
+            let wantToPlayIds = wantToPlay()
+            NetworkManager.getGameFromIds(wantToPlayIds) { (returnedGames) in
+                completion(returnedGames)
+            }
+        }
+    }
+    
+    func gameAlreadyLogged(_ game: Game) -> Bool {
+        let gameId = game.gameId
+        if isGamePlayed(gameId) || isGameWantToPlay(gameId) { return true }
+        else { return false }
+    }
+    
+    
+    //Saving to UserDefaults
     
      private func wantToPlay() -> [Int] {
         guard let wantToPlayArray = userDefaults.array(forKey: GameStatus.wantToPlay.rawValue) else {

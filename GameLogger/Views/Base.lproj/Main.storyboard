@@ -473,8 +473,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="ogi-vF-yId" id="nU5-vp-wvb"/>
-                                    <outlet property="delegate" destination="ogi-vF-yId" id="JfZ-y6-fld"/>
+                                    <outlet property="dataSource" destination="ogi-vF-yId" id="eIz-CV-96O"/>
+                                    <outlet property="delegate" destination="ogi-vF-yId" id="0G8-gq-fLs"/>
                                 </connections>
                             </tableView>
                         </subviews>
