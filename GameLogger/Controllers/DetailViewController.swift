@@ -40,8 +40,6 @@ class DetailViewController: UIViewController {
         playedButton.layer.cornerRadius = 10
         wantToPlayButton.layer.cornerRadius = 10
         
-        wantToPlayButton.setTitleColor(UIColor.darkGray, for: .disabled)
-
         if let game = game {
             gameNameLabel.text = game.name
             gameNameLabel.adjustsFontSizeToFitWidth = true
@@ -61,10 +59,12 @@ class DetailViewController: UIViewController {
     private func getGameScreenshots() {
         if let game = game {
             DispatchQueue.global(qos: .background).async {
-                NetworkManager.getScreenshots(game: game)
-                DispatchQueue.main.async {
-                    self.imageCollectionView.reloadData()
-                }
+                NetworkManager.getScreenshots(game: game, completion: {
+                    OperationQueue.main.addOperation {
+                        self.imageCollectionView.reloadData()
+                    }
+                })
+
             }
         }
     }
@@ -79,11 +79,13 @@ class DetailViewController: UIViewController {
      @IBAction private func havePlayedPushed(_ sender: Any) {
         guard let game = game else { fatalError() }
         manager.addGame(game, status: .havePlayed)
+        checkGameStatus()
     }
     
     @IBAction private func wantToPlayPushed(_ sender: Any) {
         guard let game = game else { fatalError() }
         manager.addGame(game, status: .wantToPlay)
+        checkGameStatus()
     }
 
     
@@ -101,17 +103,10 @@ extension DetailViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "detailViewCell", for: indexPath) as! DetailCollectionViewCell
         if let screenshots = game?.screenshots {
            cell.imageView.image = screenshots[indexPath.row]
+        } else {
+            print("currently no screenshots")
         }
         return cell
-    }
-}
-
-extension UIViewController {
-    func presentAlertWithMessage(_ error: NSError) {
-        let message = error.userInfo["message"] as? String ?? "No error message"
-        let controller = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        controller.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
-        self.present(controller, animated: true, completion: nil)
     }
 }
 

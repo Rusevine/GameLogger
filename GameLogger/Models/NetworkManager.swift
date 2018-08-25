@@ -96,13 +96,14 @@ class NetworkManager: NSObject {
     
   // MARK: - Method for downloading images when detailView is accessed
   
-    class func getScreenshots(game: Game){
+    class func getScreenshots(game: Game, completion: () -> ()){
         guard let screenshotUrls = game.screenshotsURLs else { return }
         for url in screenshotUrls{
             do{
                 let data = try Data(contentsOf: url)
                 if let image = UIImage(data: data) {
                     game.screenshots?.append(image)
+                    completion()
                 }
             } catch let error {
                 print("Unable to load data: \(error)")
