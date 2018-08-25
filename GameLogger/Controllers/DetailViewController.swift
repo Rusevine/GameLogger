@@ -31,13 +31,17 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setViews()
+        checkGameStatus()
     }
     
     // MARK: - Custom Methods
     
-    func setViews() {
+    private func setViews() {
         playedButton.layer.cornerRadius = 10
         wantToPlayButton.layer.cornerRadius = 10
+        
+        wantToPlayButton.setTitleColor(UIColor.darkGray, for: .disabled)
+
         if let game = game {
             gameNameLabel.text = game.name
             gameNameLabel.adjustsFontSizeToFitWidth = true
@@ -45,7 +49,16 @@ class DetailViewController: UIViewController {
         getGameScreenshots()
     }
     
-    func getGameScreenshots() {
+    private func disableButtons() {
+        wantToPlayButton.isEnabled = false
+        playedButton.isEnabled = false
+        wantToPlayButton.setTitleColor(UIColor.darkGray, for: .disabled)
+        playedButton.setTitleColor(UIColor.darkGray, for: .disabled)
+        wantToPlayButton.alpha = 0.5
+        playedButton.alpha = 0.5
+    }
+    
+    private func getGameScreenshots() {
         if let game = game {
             DispatchQueue.global(qos: .background).async {
                 NetworkManager.getScreenshots(game: game)
@@ -56,12 +69,19 @@ class DetailViewController: UIViewController {
         }
     }
     
-    @IBAction func havePlayedPushed(_ sender: Any) {
+    private func checkGameStatus() {
+        guard let game = game else { return }
+        if manager.gameAlreadyLogged(game) {
+            disableButtons()
+        }
+    }
+    
+     @IBAction private func havePlayedPushed(_ sender: Any) {
         guard let game = game else { fatalError() }
         manager.addGame(game, status: .havePlayed)
     }
     
-    @IBAction func wantToPlayPushed(_ sender: Any) {
+    @IBAction private func wantToPlayPushed(_ sender: Any) {
         guard let game = game else { fatalError() }
         manager.addGame(game, status: .wantToPlay)
     }

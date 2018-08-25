@@ -109,4 +109,19 @@ class NetworkManager: NSObject {
             }
         }
     }
+    
+    class func getGameFromIds(_ ids: [Int], completion: @escaping ([Game]) -> ()) {
+        var gamesToReturn = [Game]()
+        
+        for id in ids {
+            guard let url = URL(string:"https://api-endpoint.igdb.com/games/\(id)/") else { fatalError("Game Id does not exist") }
+            parseJSONFrom(url) { (games) in
+                guard let game = games.first else { fatalError() }
+                gamesToReturn.append(game)
+                if gamesToReturn.count == ids.count {
+                    completion(gamesToReturn)
+                }
+            }
+        }
+    }
 }
