@@ -32,15 +32,25 @@ class SavedGamesViewController: UIViewController {
             }
         }
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CellSelectedSegue" {
+            let tableViewCell = sender as! UITableViewCell
+            let vc = segue.destination as! DetailViewController
+            guard let indexPath = tableView.indexPath(for: tableViewCell) else { return }
+            switch indexPath.section {
+                case 0:
+                    vc.game = havePlayedGames[indexPath.row]
+                case 1:
+                    vc.game = wantToPlayGames[indexPath.row]
+                default:
+                    print("Invalid")
+            }
+        }
+    }
     override func viewDidLoad() {
         tableView.sectionHeaderHeight = view.frame.size.height / 16
-    }
-    
-   
+        }
 }
-
-    
 
 // MARK: - Table View Data Source
 
@@ -110,10 +120,23 @@ extension SavedGamesViewController: UITableViewDelegate {
     }
     
    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: "Remove") { (action, view, handler) in
-            print("Delete Action Tapped")
+        let deleteAction = UIContextualAction(style: .destructive, title: "REMOVE") { (action, view, handler) in
+   
+            switch indexPath.section {
+                case 0:
+                    self.havePlayedGames.remove(at: indexPath.row)
+                case 1:
+                    self.wantToPlayGames.remove(at: indexPath.row)
+                default:
+                    print("Invalid")
+            }
+            
+            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.left)
+            tableView.reloadData()
+    
+            // [self.todos removeObjectAtIndex:indexPath.row];
         }
-        deleteAction.backgroundColor = .red
+        deleteAction.backgroundColor = UIColor(red: (175/255), green: (11/255), blue: (32/255), alpha: 1.0)
         let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
         return configuration
     
