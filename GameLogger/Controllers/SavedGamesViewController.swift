@@ -14,6 +14,7 @@ class SavedGamesViewController: UIViewController {
     let manager = DataManager()
     var havePlayedGames = [Game]()
     var wantToPlayGames =  [Game]()
+ 
     
     override func viewWillAppear(_ animated: Bool) {
         manager.fetchGamesWithStatus(.havePlayed) { (returnedGames) in
@@ -31,8 +32,13 @@ class SavedGamesViewController: UIViewController {
             }
         }
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        return
+    }
 
 }
+
     
 
 // MARK: - Table View Data Source
@@ -57,9 +63,10 @@ extension SavedGamesViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GameListCell") as! GameListCell
         switch indexPath.section {
         case 0:
-            cell.title.text = havePlayedGames[indexPath.row].name
+            cell.configureCellWith(havePlayedGames[indexPath.row])
         case 1:
-            cell.title.text = wantToPlayGames[indexPath.row].name
+            cell.configureCellWith(wantToPlayGames[indexPath.row])
+
         default:
             cell.title.text = "No name"
         }

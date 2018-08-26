@@ -35,7 +35,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var popularGameButton: UIButton!
-    
+    @IBOutlet weak var searchButton: UIButton!
     // MARK: - Properties
     
     var searchGames = [Game]()
@@ -45,6 +45,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         self.popularGameButton.alpha = 0
+        searchButton.layer.cornerRadius = 10
         getPopularGames()
     }
     

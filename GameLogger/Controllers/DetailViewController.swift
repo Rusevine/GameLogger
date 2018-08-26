@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController,UIScrollViewDelegate {
     
     // MARK: - IBOutlets
   
@@ -22,7 +22,8 @@ class DetailViewController: UIViewController {
     private let manager =  DataManager()
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
- 
+    @IBOutlet weak var scrollView: UIScrollView!
+    
   
 
   
@@ -39,11 +40,18 @@ class DetailViewController: UIViewController {
     private func setViews() {
         playedButton.layer.cornerRadius = 10
         wantToPlayButton.layer.cornerRadius = 10
+        scrollView.delegate=self
+        scrollView.layer.cornerRadius = 10
+        scrollView.contentSize = CGSize(width: 345, height: 385)
         
         if let game = game {
             gameNameLabel.text = game.name
             gameNameLabel.adjustsFontSizeToFitWidth = true
+           ratingLabel.text = String(format:"Rating: %.2f", game.gameRating!)
+           let descriptionDefault = "N/A"
+           descriptionLabel.text = ("Description: \(game.summary ?? descriptionDefault)")
         }
+        
         getGameScreenshots()
     }
     
