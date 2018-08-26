@@ -33,10 +33,11 @@ class SavedGamesViewController: UIViewController {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        return
+    override func viewDidLoad() {
+        tableView.sectionHeaderHeight = view.frame.size.height / 16
     }
-
+    
+   
 }
 
     
@@ -66,7 +67,6 @@ extension SavedGamesViewController: UITableViewDataSource {
             cell.configureCellWith(havePlayedGames[indexPath.row])
         case 1:
             cell.configureCellWith(wantToPlayGames[indexPath.row])
-
         default:
             cell.title.text = "No name"
         }
@@ -91,7 +91,32 @@ extension SavedGamesViewController: UITableViewDelegate {
         }
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor(red: (50/255), green: (50/255), blue: (50/255), alpha: 1.0)
+        
+        let headerLabel = UILabel(frame: CGRect(x: 10, y: 5, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+        headerLabel.font = UIFont(name: "Bangers", size: 30)
+        headerLabel.textColor = UIColor.white
+        headerLabel.text = self.tableView(self.tableView,titleForHeaderInSection: section)
+        headerLabel.sizeToFit()
+        headerView.addSubview(headerLabel)
+        
+        return headerView
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+   func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: "Remove") { (action, view, handler) in
+            print("Delete Action Tapped")
+        }
+        deleteAction.backgroundColor = .red
+        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+        return configuration
+    
+    }
 }
+

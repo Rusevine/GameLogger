@@ -17,6 +17,7 @@ class SearchResultsViewController: UIViewController {
     // MARK: - Properties
     
     var games: [Game]?
+    var searchInput: String?
 
     // MARK: - Segue
     
@@ -28,6 +29,9 @@ class SearchResultsViewController: UIViewController {
             guard let indexPath = tableView.indexPath(for: tableViewCell) else { return }
             vc.game = games[indexPath.row]
         }
+    }
+    override func viewDidLoad() {
+        tableView.sectionHeaderHeight = view.frame.size.height / 20
     }
 
 }
@@ -59,4 +63,24 @@ extension SearchResultsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Search results for \"\(searchInput ?? "Nothing")\""
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor(red: (50/255), green: (50/255), blue: (50/255), alpha: 1.0)
+        
+        let headerLabel = UILabel(frame: CGRect(x: 10, y: 5, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+        headerLabel.font = UIFont(name: "Bangers", size: 20)
+        headerLabel.textColor = UIColor.white
+        headerLabel.text = self.tableView(self.tableView,titleForHeaderInSection: section)
+        headerLabel.sizeToFit()
+        headerView.addSubview(headerLabel)
+        
+        return headerView
+    }
+    
+    
 }

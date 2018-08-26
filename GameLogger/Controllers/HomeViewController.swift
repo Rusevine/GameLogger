@@ -26,7 +26,7 @@ class HomeViewController: UIViewController {
         NetworkManager.getDataFor(searchTerm: text) { (games) in
             self.searchGames = games
             OperationQueue.main.addOperation({
-                self.performSegue(withIdentifier: "SearchSegue", sender: nil)
+                self.performSegue(withIdentifier: "SearchSegue", sender: self.searchField)
                 self.searchField.text = ""
             })
         }
@@ -67,6 +67,7 @@ class HomeViewController: UIViewController {
         if segue.identifier == "SearchSegue" {
             let vc = segue.destination as! SearchResultsViewController
             vc.games = searchGames
+            vc.searchInput = self.searchField.text
         } else if segue.identifier == "PopularButtonPushed" {
             let vc = segue.destination as! DetailViewController
             guard let indexPath = popularIndexPath else { return }
