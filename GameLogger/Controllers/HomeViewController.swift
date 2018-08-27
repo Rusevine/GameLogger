@@ -36,6 +36,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var popularGameButton: UIButton!
     @IBOutlet weak var searchButton: UIButton!
+    
+    
+    @IBOutlet var gamesTapped: UITapGestureRecognizer!
     // MARK: - Properties
     
     var searchGames = [Game]()
@@ -47,6 +50,10 @@ class HomeViewController: UIViewController {
         self.popularGameButton.alpha = 0
         searchButton.layer.cornerRadius = 10
         getPopularGames()
+    }
+    
+    func gamesDoubleTapped() {
+        print("")
     }
     
     
@@ -63,6 +70,7 @@ class HomeViewController: UIViewController {
     
     // MARK: - Segue
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SearchSegue" {
             let vc = segue.destination as! SearchResultsViewController
@@ -74,7 +82,6 @@ class HomeViewController: UIViewController {
             vc.game = popularGames[indexPath.row]
         }
     }
-
 }
 
 // MARK: - CollectionView Data Source

@@ -60,7 +60,7 @@
                                     <segue destination="GMp-m0-L0S" kind="show" identifier="PopularButtonPushed" id="Jqp-Ef-YGL"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="26R-Ba-Zh6">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="26R-Ba-Zh6">
                                 <rect key="frame" x="0.0" y="413" width="375" height="100"/>
                                 <color key="backgroundColor" red="0.68235294117647061" green="0.6588235294117647" blue="0.68627450980392157" alpha="0.5781785102739726" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wnQ-6O-SCH">
@@ -77,11 +77,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QBx-sd-hsc">
+                                                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QBx-sd-hsc">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <gestureRecognizers/>
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="QBx-sd-hsc" firstAttribute="top" secondItem="lEI-y1-0MG" secondAttribute="top" id="5bM-fk-LOr"/>
                                             <constraint firstItem="QBx-sd-hsc" firstAttribute="leading" secondItem="lEI-y1-0MG" secondAttribute="leading" id="VSA-Vu-87w"/>
@@ -433,7 +435,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Minimalistic-Emo" translatesAutoresizingMaskIntoConstraints="NO" id="CDn-uD-4a9">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="-10" width="375" height="666"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o3i-95-AdR">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
@@ -488,13 +490,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="o3i-95-AdR" firstAttribute="leading" secondItem="IQZ-wc-qjj" secondAttribute="leading" id="B1L-Hf-ZsL"/>
-                            <constraint firstItem="IQZ-wc-qjj" firstAttribute="bottom" secondItem="CDn-uD-4a9" secondAttribute="bottom" id="Dzp-Gs-NAR"/>
-                            <constraint firstItem="CDn-uD-4a9" firstAttribute="top" secondItem="IQZ-wc-qjj" secondAttribute="top" id="Fkc-dp-mdy"/>
+                            <constraint firstItem="CDn-uD-4a9" firstAttribute="top" secondItem="kam-Ka-Ybo" secondAttribute="top" constant="-10" id="Dgp-KD-tdO"/>
                             <constraint firstItem="IQZ-wc-qjj" firstAttribute="trailing" secondItem="o3i-95-AdR" secondAttribute="trailing" id="J8M-q1-GCX"/>
-                            <constraint firstItem="IQZ-wc-qjj" firstAttribute="trailing" secondItem="CDn-uD-4a9" secondAttribute="trailing" id="KqB-yi-OMv"/>
+                            <constraint firstAttribute="bottom" secondItem="CDn-uD-4a9" secondAttribute="bottom" constant="11" id="RD8-c1-Mb6"/>
                             <constraint firstItem="IQZ-wc-qjj" firstAttribute="bottom" secondItem="o3i-95-AdR" secondAttribute="bottom" id="UdF-yL-cec"/>
-                            <constraint firstItem="CDn-uD-4a9" firstAttribute="leading" secondItem="IQZ-wc-qjj" secondAttribute="leading" id="eBu-hQ-HzG"/>
                             <constraint firstItem="o3i-95-AdR" firstAttribute="top" secondItem="IQZ-wc-qjj" secondAttribute="top" id="fuv-j1-bgH"/>
+                            <constraint firstItem="CDn-uD-4a9" firstAttribute="trailing" secondItem="IQZ-wc-qjj" secondAttribute="trailing" id="l1J-1t-wXf"/>
+                            <constraint firstItem="CDn-uD-4a9" firstAttribute="leading" secondItem="IQZ-wc-qjj" secondAttribute="leading" id="wM1-za-oaL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IQZ-wc-qjj"/>
                     </view>
@@ -505,44 +507,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GOG-FW-owy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3674" y="134"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="LZH-R9-IL3">
-            <objects>
-                <viewController id="aPz-jq-bol" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="V2x-ie-38T">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zSj-O7-yjP">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="106" id="ePt-c5-TUZ">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="106"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ePt-c5-TUZ" id="JnB-EH-mef">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="105.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="zSj-O7-yjP" firstAttribute="leading" secondItem="Ca1-Wv-BeD" secondAttribute="leading" id="LZn-os-kIw"/>
-                            <constraint firstItem="Ca1-Wv-BeD" firstAttribute="bottom" secondItem="zSj-O7-yjP" secondAttribute="bottom" id="PEP-t0-JpF"/>
-                            <constraint firstItem="Ca1-Wv-BeD" firstAttribute="trailing" secondItem="zSj-O7-yjP" secondAttribute="trailing" id="QVS-zV-1aE"/>
-                            <constraint firstItem="zSj-O7-yjP" firstAttribute="top" secondItem="Ca1-Wv-BeD" secondAttribute="top" id="aHX-b7-aJt"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Ca1-Wv-BeD"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WEe-YV-CsS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6444" y="121.88905547226388"/>
+            <point key="canvasLocation" x="3672.8000000000002" y="133.5832083958021"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CyZ-Fg-B97">
@@ -569,6 +534,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="vtg-Dw-1BU"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kvm-C6-SKp">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
