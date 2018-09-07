@@ -15,7 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        print("Docs dir = \(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))")
+        let coreDataManager = CoreDataManager(modelName: "Game_D")
+        print(coreDataManager.managedObjectContext)
         return true
     }
 

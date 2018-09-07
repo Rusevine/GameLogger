@@ -23,6 +23,8 @@
 		BA5100F5212DAB7300A14C5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA5100F3212DAB7300A14C5F /* LaunchScreen.storyboard */; };
 		BA5100FF212DAF4400A14C5F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5100FE212DAF4400A14C5F /* NetworkManager.swift */; };
 		BA510105212DB08A00A14C5F /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA510104212DB08A00A14C5F /* Game.swift */; };
+		BACABF97214314340073E490 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACABF96214314340073E490 /* CoreDataManager.swift */; };
+		BACABF9B21431B190073E490 /* Game_D.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BACABF9921431B190073E490 /* Game_D.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		BA5100F6212DAB7300A14C5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA5100FE212DAF4400A14C5F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BA510104212DB08A00A14C5F /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		BACABF96214314340073E490 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		BACABF9A21431B190073E490 /* Game_D.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Game_D.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 		BA5100E9212DAB7200A14C5F /* GameLogger */ = {
 			isa = PBXGroup;
 			children = (
+				BACABF9821431AE00073E490 /* Core Data */,
+				BACABF95214314130073E490 /* Managers */,
 				46441CB3212E1D8400295D61 /* Fonts */,
 				BA5100FD212DAF1200A14C5F /* Models */,
 				BA510103212DAFC300A14C5F /* Views */,
@@ -109,9 +115,7 @@
 		BA5100FD212DAF1200A14C5F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BA5100FE212DAF4400A14C5F /* NetworkManager.swift */,
 				BA510104212DB08A00A14C5F /* Game.swift */,
-				BA3941D121308084008D6F7D /* DataManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -137,6 +141,24 @@
 				BA092483212F47AB0069156A /* GameListCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		BACABF95214314130073E490 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				BA5100FE212DAF4400A14C5F /* NetworkManager.swift */,
+				BA3941D121308084008D6F7D /* DataManager.swift */,
+				BACABF96214314340073E490 /* CoreDataManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		BACABF9821431AE00073E490 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				BACABF9921431B190073E490 /* Game_D.xcdatamodeld */,
+			);
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,7 +240,9 @@
 				BA5100ED212DAB7200A14C5F /* HomeViewController.swift in Sources */,
 				46441CAF212DD87300295D61 /* DetailViewController.swift in Sources */,
 				BA1944CC212E00BB000804C7 /* PopularGameCell.swift in Sources */,
+				BACABF9B21431B190073E490 /* Game_D.xcdatamodeld in Sources */,
 				BA1944D0212E1B4F000804C7 /* ResultCell.swift in Sources */,
+				BACABF97214314340073E490 /* CoreDataManager.swift in Sources */,
 				BA5100EB212DAB7200A14C5F /* AppDelegate.swift in Sources */,
 				BA510105212DB08A00A14C5F /* Game.swift in Sources */,
 				BA092484212F47AB0069156A /* GameListCell.swift in Sources */,
@@ -426,6 +450,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BACABF9921431B190073E490 /* Game_D.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BACABF9A21431B190073E490 /* Game_D.xcdatamodel */,
+			);
+			currentVersion = BACABF9A21431B190073E490 /* Game_D.xcdatamodel */;
+			path = Game_D.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BA5100DF212DAB7200A14C5F /* Project object */;
 }
